@@ -1,0 +1,53 @@
+.form1
+{
+   width: 600px;
+   padding: 10px 40px;
+   margin: auto;
+   background-color: azure;
+   border: 1px solid black;
+}
+h3
+{
+    text-align: center;
+    color: chartreuse;
+}
+#hoTen
+{
+    width: 580px;
+    background-color:whitesmoke;
+}
+.phuongthuc
+{
+    color: red;
+    margin: 4px;
+    font-size: 20px;
+}
+.ten
+{
+    color: red;
+    margin: 4px;
+    font-size: 20px;
+}
+.tinhthanh
+{
+    color: red;
+    margin: 4px;
+    font-size: 20px;
+}
+p
+{
+    color: burlywood;
+}
+.tinh
+{
+    width: 580px;
+    background-color: whitesmoke;
+}
+button
+{
+    color: darkgoldenrod;
+    color:grey;
+    width: 100px;
+    height: 50px;
+    font-weight: 700;
+}

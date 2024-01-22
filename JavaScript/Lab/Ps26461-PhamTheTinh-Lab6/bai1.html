@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Space Grotesk', sans-serif;
+            cursor: pointer;
+        }
+
+        .border-box h1 {
+            text-align: center;
+        }
+
+        .border-box .panel h2 {
+            margin-left: 130px;
+            margin-top: 10px;
+        }
+
+        .border-box .panel p {
+            margin-left: 130px;
+            margin-top: 10px;
+        }
+
+        .border-box {
+            /* margin-top: 100px;
+            margin: auto; */
+            /* border: 1px solid #444; */
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+            width: 1350px;
+            margin: auto;
+            flex-direction: column;
+        }
+
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 80%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+            margin: auto;
+        }
+
+        .active,
+        .accordion:hover {
+            background-color: #ccc;
+        }
+
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+        }
+
+        .accordion:after {
+            content: '\02795';
+            font-size: 8px;
+            color: #000;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after {
+            content: "\2796";
+        }
+    </style>
+</head>
+
+<body>
+    <div class="border-box">
+        <h1>Bài hát hay</h1>
+
+        <button class="accordion">Bài hát: Dĩ vãng nhạt nhòa</button>
+        <div class="panel">
+            <h2>Lyric: </h2>
+            <p>
+                Chờ người tình lỡ là tình đầu tình rực rỡ <br>
+                Tình trong dĩ vãng nhạt nhòa <br>
+                Vào mùa trăng đó <br>
+                Chàng từ phương xa về như giấc mơ <br>
+                Tình đầu gặp gỡ <br>
+                Rồi trọn đời còn nhớ tình tha thiết đắm say <br>
+                Ánh mắt ngây thơ nhưng ru hồn <br>
+                Rũ áo phong sương anh vui tình duyên <br>
+                Lúc đắm đuối anh cho rằng tình ta như ánh trăng rằm <br>
+                Chớ đâu biết dòng đời nhiều cơn sóng phũ phàng <br>
+                Cho lứa đôi chia phôi đợi chờ cho nhau mãi thương nhớ <br>
+                Cho đến nay em thuyền đã sang bờ <br><br>
+            </p>
+        </div>
+
+        <button class="accordion">Bài hát: Đôi bờ</button>
+        <div class="panel">
+            <h2>Lyric: </h2>
+            <p>
+                Đêm qua anh mơ thấy em yêu đến trong mộng buồn <br>
+                Dĩ vãng thoáng tới đốt cháy trái tim thương em <br>
+                Khóe mắt đẫm ướt mái tóc xõa mới chấm ngang vai cho anh thương em ngàn đời <br>
+                Anh kêu tên em qua vùng biển sóng chân trời <br>
+                Bóng con thuyền vượt nghìn trùng lệ trào dâng <br>
+                Lời anh kêu tan trong gió reo sóng dâng bao la<br>
+                Kể từ đây<br>
+                Mãi mãi mất nhau<br>
+                Mãi mang thương đau cho mây đen giăng mờ<br>
+                Để duyên ngâu chia đôi bờ, tình mãi mong chờ<br><br><br>
+            </p>
+        </div>
+
+        <button class="accordion">Bài hát: Hồi ức</button>
+        <div class="panel">
+            <h2>Lyric: </h2>
+            <p>
+                Tôi đi thắp nén nhang những ngàу đầu năm <br>
+                Ɲơi đâу là nghĩa trang bao nhiêu người nằm <br>
+                Ɲơi ai mỏi bước chân tìm về nương nấu <br>
+                Ɲhẹ gối đầu, ngừng nỗi đau <br><br>
+
+                Tôi đi qua tấm bia không in hình dung<br>
+                Trước mắt những cái tên xa xôi lạ lùng<br>
+                Ѕinh ra haу chết đi giờ như dĩ vãng<br>
+                Ɲgười ghé ngang, rồi biến tan<br><br>
+
+                <u>Điệp khúc:</u><br>
+                Ɲhững đêm đông nghe chuуện xưa thấу nhớ<br>
+                Ɲgàу ấу cha như đứa trẻ thơ bỡ ngỡ<br>
+                Ɓà lão không tên xa rồi<br>
+                Ɲgười cũ như cơn gió trôi<br>
+                Hồi ức nơi cha đong đầу những ấp áp chưa vơi<br><br>
+
+                Giữa mênh mang bao điều chưa biết tới<br>
+                Ɲgười hãу cho tôi cúi đầu nghe dẫn lối<br>
+                Ɲgàу sau lúc tôi như là<br>
+                Một cơn gió baу thoáng qua<br>
+                Ɲgười nhắc haу quên người lạ vội vã<br><br><br>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>

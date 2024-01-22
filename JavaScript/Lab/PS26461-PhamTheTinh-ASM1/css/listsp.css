@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+.sanphammoi
+{
+    width: 1000px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: 32.5% 32.5% 33%;
+    grid-template-rows: 420px;
+    grid-column-gap: 1%;
+    margin: auto;
+    
+}
+.sanphammoi .sp
+{
+   border: 1px solid darkblue;
+   height: 410px;
+   text-align: center;
+   border-radius: 5px;
+   position: relative;
+}
+.sanphammoi .hinh
+{
+    height: 300px;
+    max-width: 100%;
+    margin: 2px;
+    border: 1px solid yellow;
+}
+.sanphammoi .icon
+{
+    position: absolute;
+    top: 140px;
+    left: 120px;
+    background-color: azure;
+    display: none;  
+}
+.sanphammoi p.gia
+{
+    font-size: 1.3em;
+    padding: 10px 0px;
+
+}
+.sanphammoi h3.tensp
+{
+    padding: 10px 0;
+    height: 40px;
+    color: red;
+}

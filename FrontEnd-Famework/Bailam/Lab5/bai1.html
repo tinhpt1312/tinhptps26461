@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body ng-app="myapp">
+
+
+    <div class="container-fluid row" ng-controller="myctrl">
+        <div class="card text-center col-2 my-5 mx-5" >
+            <div class="card-header text-xl">{{sanpham.name}}</div>
+            <div class="card-body">
+                <img src="img/{{sanpham.img}}" class="img-thumbnail" alt="">
+                <p class="d-flex justify-start">Đơn giá: <b>199.000đ</b></p>
+                <p for="" class="d-flex justify-start">Số lượng: </p>
+                <input type="number" min="0" max="99" class="form-control" ng-model="soluong">
+                
+            </div>
+            <button type="button" ng-click='thanhtien()'>Tính tiền</button>
+            <div class="card-footer d-flex justify-start" >Thành tiền: <b ng-bind="total"></b> </div>
+        </div>
+
+    </div>
+
+    <script>
+        var app = angular.module("myapp", []);
+        app.controller("myctrl", myfunc);
+        function myfunc($scope) {
+
+            $scope.sanpham =
+                    {
+                        img: "1.jpg",
+                        name: "Pack 3 Quần Short Nam",
+                        title: "Thoáng mát / Mix màu",
+                        price: "199.000"
+                    };
+                    
+                
+            
+            $scope.thanhtien = function(){
+                var a = parseInt($scope.soluong);
+                var b = parseInt($scope.price);
+                $scope.total = a * 199000; 
+
+            };
+
+
+
+        }
+        
+    </script>
+</body>
+
+</html>

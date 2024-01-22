@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function hienthi() {
+            var tensp = document.getElementById("ten").innerText;
+            var sosp = document.getElementById("qty").value;
+            var giasp = document.getElementById("pro").getAttribute("data-price");
+            var tinhtien = sosp * giasp;
+
+            document.getElementById("name").innerHTML = tensp;
+            document.getElementById("amout").innerText = "$" + tinhtien;
+        }
+    </script>
+    <style>
+        body {
+            width: auto;
+            height: 100vh;
+        }
+
+        .container {
+            border: 2px solid black;
+            text-align: center;
+            width: 700px;
+            margin: auto;
+            background-color: gray;
+            color:white;
+            font-family: monospace;
+        }
+        .container .promax{
+            border: 2px dotted white;
+            margin: 5px;
+        }
+        button{
+            background-color: yellow;
+            color: black;
+            width: 80px;
+            height: 30px;
+        }
+        input{
+            height: 30px;
+            width: 70px;
+            text-align: center;
+        }
+        img{
+            margin-bottom: 20px;
+        }
+        h3{
+            font-size: x-large;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="promax" >
+            <h2 id="ten">IPHONE 14 PRO MAX 2022</h2>
+            <img src="../Ps26461-PhamTheTinh-Lab5/img/ip14.png" width="20%"><br>
+            <label id="pro" data-price="1950" style="font-size: x-large;">Số lượng: </label>
+            <input type="number" id="qty" value="1">
+            <button onclick="hienthi()"> Tính </button>
+            <hr>
+            <h3>Name: <span id="name">?</span></h3>
+            <h3>Amout: <span id="amout">?</span></h3>
+        </div>
+    </div>
+</body>
+
+</html>

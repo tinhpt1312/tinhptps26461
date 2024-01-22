@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+        body {
+            background: url('bg.jpg') no-repeat;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        #form1 {
+            box-shadow: 0px 0px 80px lightslategrey;
+            border-radius: 5px;
+            padding: 10px 40px;
+            background-color: whitesmoke;
+            margin: 60px auto;
+            max-width: 550px;
+            line-height: 30px;
+        }
+
+        #form1 #tensach,
+        #theloai {
+            width: 550px;
+            height: 30px;
+            border-radius: 5px;
+            border: solid 1px lightslategrey;
+            padding-left: 20px;
+        }
+
+        fieldset {
+            border-radius: 5px;
+            border: solid 1px lightslategrey;
+            width: 520px;
+        }
+
+        #btnthem {
+            margin: 0px auto;
+            width: 160px;
+            height: 45px;
+            border-radius: 10px;
+            border: none;
+            background-color: royalblue;
+            color: white;
+        }
+
+        em {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="form1">
+        <h2 style="display: flex; justify-content: space-between;">FORM THÊM SÁCH <span id="ngay"></span> </h2>
+        <form name="frm" onsubmit="return kiemtra()" action="themsachthanhcong.html">
+            <p> <input name="tensach" id="tensach" placeholder="Tên sách"> </p>
+            <em id="name"></em>
+            <p>
+            <fieldset id="h1">
+                <legend>Hình thức bìa</legend>
+                <input type="radio" name="bia" value="biacung"><label>Bìa cứng</label>
+                <input type="radio" name="bia" value="biamem"><label>Bìa mềm</label><br>
+                <em id="face"></em>
+            </fieldset>
+            </p>
+            <p>
+            <fieldset id="h2" name="tukhoa">
+                <legend>Từ khóa (tag)</legend>
+                <input type="checkbox" id="myCheckBox" onclick="checkmail()" value="Đời sống"><label>Đời sống</label>
+                <input type="checkbox" id="myCheckBox" onclick="checkmail()" value="Con người"><label>Con người</label>
+                <input type="checkbox" id="myCheckBox" onclick="checkmail()" value="Triết học"><label>Triết học</label>
+                <input type="checkbox" id="myCheckBox" onclick="checkmail()" value="Khám phá"><label>Khám phá</label>
+                <input type="checkbox" id="myCheckBox" onclick="checkmail()" value="Âm nhạc"><label>Âm nhạc</label><br>
+                <em id="text" style="display:block">Vui lòng chọn từ khóa</em>
+            </fieldset>
+            </p>
+            <p>
+                <select name="theloai" id="theloai">
+                    <option value="0">Chọn thể loại</option>
+                    <option value="1">Nghệ thuật sống</option>
+                    <option value="2">Thám hiểm</option>
+                    <option value="3">Văn học</option>
+                </select>
+                <em id="book"></em>
+            </p>
+            <p>
+                <button type="submit" id="btnthem" onclick="kiemtra()">THÊM SÁCH</button>
+            </p>
+            <div id="kq" style=" color: red;  text-align: center;"></div>
+        </form>
+
+    </div>
+</body>
+
+</html>
+<script>
+    function kiemtra() {
+        checkname();
+        checkphone();
+        checkmail();
+        checkdiachi();
+        return thanhcong;
+    }
+
+    function checkname() {
+        thanhcong = true;
+        thongbao = "";
+        var name = document.getElementById("tensach").value;
+        if (name.length == 0) {
+            thongbao += "Vui lòng nhập tên sản phẩm";
+            //document.getElementById("name").innerText = "Vui lòng nhập tên sản phẩm";
+            document.getElementById("tensach").style.backgroundColor = "yellow";
+            thanhcong = false;
+        } else if (name.length < 6) {
+            // document.getElementById("name").innerText = "Tên sách từ 6 đến 50 kí tự";
+            thongbao += "Tên sách từ 6 đến 50 kí tự";
+            document.getElementById("tensach").style.backgroundColor = "yellow";
+            thanhcong = false;
+        } else if (name.length > 50) {
+            // document.getElementById("name").innerText = "Tên sách từ 6 đến 50 kí tự";
+            thongbao += "Tên sách từ 6 đến 50 kí tự";
+            document.getElementById("tensach").style.backgroundColor = "yellow";
+            thanhcong = false;
+        } else {
+            thongbao += "";
+            document.getElementById("tensach").style.backgroundColor = "white";
+            thanhcong = true;
+        }
+        document.getElementById("name").innerHTML = thongbao;
+        return thanhcong;
+    }
+    const myTimeout = setTimeout(myGreeting, 5000);
+
+    function myGreeting() {
+        document.getElementById("name").innerHTML = "";
+        document.getElementById("face").innerHTML = "";
+        document.getElementById("book").innerHTML = "";
+        // document.getElementById("text").innerHTML = "";
+    }
+    function checkphone() {
+        thanhcong = true;
+        thongbao = "";
+        var bia = document.getElementsByName("bia");
+        if (bia[0].checked == false && bia[1].checked == false) {
+            thongbao += "Vui lòng chọn hình thức bìa";
+            document.getElementById("h1").style.backgroundColor = "yellow";
+            thanhcong = false;
+        } else {
+            document.getElementById("h1").style.backgroundColor = "White";
+        }
+        document.getElementById("face").innerHTML = thongbao;
+        return thanhcong;
+    }
+
+    function checkmail() {
+        var checkBox = document.getElementById("myCheckBox");
+        var text = document.getElementById("text");
+        if (checkBox.checked == true) {
+            text.style.display = "none";
+            document.getElementById("h2").style.backgroundColor = "white";
+        } else {
+            text.style.display = "block";
+            document.getElementById("h2").style.backgroundColor = "yellow";
+        }
+    }
+
+    function checkdiachi() {
+        thanhcong = true;
+        thongbao = "";
+        var diachi = document.getElementById("theloai");
+        if (diachi.value == "0") {
+            thongbao += "Vui lòng chọn thể loại";
+            document.getElementById("theloai").style.backgroundColor = "yellow";
+            thanhcong = false;
+        } else {
+            document.getElementById("theloai").style.backgroundColor = "white";
+        }
+        document.getElementById("book").innerHTML = thongbao;
+        return thanhcong;
+    }
+
+    function kiemtralogin() {
+        thanhcong = true;
+        thongbao = "";
+        var name = document.getElementById("tensach");
+        if (name.value.length == 0) {
+            thongbao += "Vui lòng nhập tên sản phẩm <br>";
+            thanhcong = false;
+        }
+        var bia = document.getElementsByName("bia");
+        if (bia[0].checked == false && bia[1].checked == false) {
+            thongbao += "Vui lòng chọn hình thức bìa <br>";
+            thanhcong = false;
+        }
+        var diachi = document.getElementById("theloai");
+        if (diachi.value == "0") {
+            thongbao += "Vui lòng chọn thể loại";
+            thanhcong = false;
+        }
+        document.getElementById("kq").innerHTML = thongbao;
+        return thanhcong;
+    }
+    function tg() {
+        var now = new Date();
+        var h = now.getHours();
+        var m = now.getMinutes();
+        var s = now.getSeconds();
+        if(h <= 9){
+            h = "0" + h;
+        }
+        if(m <= 9){
+            m = "0" + m;
+        }
+        if(s <= 9){
+            s = "0" + s;
+        }
+        document.getElementById("ngay").innerHTML = h + ":" + m + ":" + s;
+    }
+    dh = setInterval("tg()", 1000);
+</script>

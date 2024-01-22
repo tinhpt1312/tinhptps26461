@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var flag = true;
+        var count = 0;
+        function mark(index){
+            var button = document.getElementsByTagName("button")[index];
+            button.innerText = flag? "X" : "O";
+            button.style.background = flag? "aqua" : "yellow";
+            button.setAttribute("disabled", "true");
+            flag = !flag;
+            count++;
+            if(count == 9){
+                alert("Game over");
+                location.reload();
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Space Grotesk', sans-serif;
+            cursor: pointer;
+        }
+
+        body {
+            background-color: rgb(32, 32, 32);
+            background-image: url("https://janschreiber.github.io/img2/black-chalk.jpg");
+            color: rgb(230, 230, 230);
+            text-align: center;
+            font-family: 'Indie Flower', 'Comic Sans', cursive;
+            font-size: 0.7em;
+        }
+
+        h1 {
+            line-height: 1em;
+            margin-bottom: 0;
+            padding-bottom: 5px;
+            font-size: 2.8em;
+            font-weight: bold;
+        }
+
+        table {
+            margin: 2% auto;
+            border-collapse: collapse;
+        }
+
+        .container button{
+            width: 100px;
+            height: 100px;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+
+<body><br><br><br>
+    <h1>TICTACTOE GAME</h1>
+    <table class="container">
+        <tr>
+            <td><button onclick="mark(0)"></button></td>
+            <td><button onclick="mark(1)"></button></td>
+            <td><button onclick="mark(2)"></button></td>
+        </tr>
+        <tr>
+            <td><button onclick="mark(3)"></button></td>
+            <td><button onclick="mark(4)"></button></td>
+            <td><button onclick="mark(5)"></button></td>
+        </tr>
+        <tr>
+            <td><button onclick="mark(6)"></button></td>
+            <td><button onclick="mark(7)"></button></td>
+            <td><button onclick="mark(8)"></button></td>
+        </tr>
+    </table>
+
+
+</body>
+
+</html>

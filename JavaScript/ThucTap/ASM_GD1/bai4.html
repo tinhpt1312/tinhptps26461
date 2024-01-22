@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bai4.css">
+</head>
+<body>
+  <form action="" class="form1">
+      <h3>Thanh toán mua hàng</h3>
+      <p>
+        <label class="ten">Họ và Tên</label><br>
+        <input type="text" placeholder="Họ tên người nhận" id="hoTen"><br>
+        Nhập họ tên từ 6 đến 30 kí tự
+      </p>
+      <p>
+        <label class="phuongthuc">Phương thức thanh toán</label><br>
+        <input type="radio" name="thanhtoan" value="CK"><label>Chuyển khoảng</label>
+        <input type="radio" name="thanhtoan" value="ATM"><label>Thẻ ATM nội địa</label>
+        <input type="radio" name="thanhtoan" value="NH"><label>Khi nhận hàng</label> <br>
+        Hãy chọn 1 phương phức thanh toán
+      </p>
+      <p>
+        <label class="tinhthanh">Chọn tỉnh</label><br>
+        <select  class="tinh">
+           <option value="0">Chọn tỉnh</option>
+           <option value="1">Bến Tre</option>
+           <option value="2">Cần Thơ</option>
+           <option value="1">Sài Gòn</option>
+           <option value="1">Vĩnh Long</option>
+        </select><br>
+        Tỉnh bạn đi nhé
+      </p>
+      <button>Thanh toán</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-3">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+            Nhập lương tháng 12
+        </button>
+    </div>
+
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Nhập lương tháng 12</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" placeholder="Mã nhân viên">
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" placeholder="Họ và tên">
+                        </div>
+                        <div class="col-sm-6 mt-4">
+                            <select class="form-select">
+                                <option>Đà Nẵng</option>
+                                <option>Sông Lam Nghệ An</option>
+                                <option>Thành phố Hồ Chí Minh</option>
+                                <option>Hà Nội</option>
+                                <option>Công an nhân dân</option>
+                                <option>Bà Rịa - Vũng Tàu</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6 mt-4">
+                            <input type="text" class="form-control" placeholder="Lương">
+                        </div>
+                        <div class="col-sm-6 mt-4">
+                            <input type="text" class="form-control" placeholder="Thưởng">
+                        </div>
+                        <div class="col-sm-6 mt-4">
+                            <input type="text" class="form-control" placeholder="Phụ cấp">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 mt-4">
+                            <textarea rows="3" class="form-control" placeholder="Ghi chú"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                class="bi bi-floppy2-fill p-1" viewBox="0 0 19 19">
+                                <path d="M12 2h-2v3h2z" />
+                                <path
+                                    d="M1.5 0A1.5 1.5 0 0 0 0 1.5v13A1.5 1.5 0 0 0 1.5 16h13a1.5 1.5 0 0 0 1.5-1.5V2.914a1.5 1.5 0 0 0-.44-1.06L14.147.439A1.5 1.5 0 0 0 13.086 0zM4 6a1 1 0 0 1-1-1V1h10v4a1 1 0 0 1-1 1zM3 9h10a1 1 0 0 1 1 1v5H2v-5a1 1 0 0 1 1-1" />
+                            </svg>Lưu</button>
+                        <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                class="bi bi-x-square-fill p-1" viewBox="0 0 19 19">
+                                <path
+                                    d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708" />
+                            </svg>Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

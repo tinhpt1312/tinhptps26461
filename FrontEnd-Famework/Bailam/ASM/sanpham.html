@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500&family=Rubik+Glitch&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="build/tailwind.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/angular.min.js"></script>
+</head>
+
+<body ng-app="myapp">
+
+    <div class="offcanvas offcanvas-start" id="demo">
+        <div class="offcanvas-header mx-3">
+            <h1 class="offcanvas-title text-xl">Bộ lọc</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <hr class="mx-3">
+        <div class="offcanvas-body mx-3">
+            <div>
+                <p class="mb-3 text-gray-500">Kích cỡ</p>
+                <div class="grid grid-cols-3 gap-x-4 gap-y-2">
+                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-lg w-20" type="button">S</button>
+                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-lg w-20" type="button">M</button>
+                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-lg w-20" type="button">L</button>
+                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-lg w-20" type="button">XL</button>
+                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-lg w-20" type="button">2XL</button>
+                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-lg w-20" type="button">3XL</button>
+                </div>
+
+                <div class="grid grid-cols-3 gap-x-4 gap-y-2 mt-8">
+                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-lg w-20" type="button">29</button>
+                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-lg w-20" type="button">30</button>
+                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-lg w-20" type="button">31</button>
+                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-lg w-20" type="button">32</button>
+                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-lg w-20" type="button">33</button>
+                </div>
+
+            </div>
+
+            <div>
+                <p class="mt-4 mb-3 text-gray-500">Màu sắc</p>
+                <div class="row mb-3">
+                    <input type="color" class="form-control form-control-color mx-3" id="myColor" value="#FFFFFF">
+                    <input type="color" class="form-control form-control-color mx-3" id="myColor" value="#000000">
+                    <input type="color" class="form-control form-control-color mx-3" id="myColor" value="#FF0000">
+                    <input type="color" class="form-control form-control-color mx-3" id="myColor" value="#00FF00">
+                </div>
+                <div class="row mb-3">
+                    <input type="color" class="form-control form-control-color mx-3" id="myColor" value="#0000FF">
+                    <input type="color" class="form-control form-control-color mx-3" id="myColor" value="#FFFF00">
+                    <input type="color" class="form-control form-control-color mx-3" id="myColor" value="#00FFFF">
+                    <input type="color" class="form-control form-control-color mx-3" id="myColor" value="#FF00FF">
+                </div>
+            </div>
+
+            <div>
+                <p class="mt-4 mb-3 text-gray-500">Danh mục</p>
+                <div class="form-check mb-2 ">
+                    <input type="checkbox" class="form-check-input mr-5 w-5 h-5" id="check" name="option"
+                        value="something">
+                    <label class="form-check-label text-sm " for="check">Bán chạy</label>
+                </div>
+                <div class="form-check mb-2">
+                    <input type="checkbox" class="form-check-input mr-5 w-5 h-5" id="check" name="option"
+                        value="something">
+                    <label class="form-check-label text-sm " for="check">Áo</label>
+                </div>
+                <div class="form-check mb-2">
+                    <input type="checkbox" class="form-check-input mr-5 w-5 h-5" id="check" name="option"
+                        value="something">
+                    <label class="form-check-label text-sm " for="check">Quần</label>
+                </div>
+                <div class="form-check mb-2">
+                    <input type="checkbox" class="form-check-input mr-5 w-5 h-5" id="check" name="option"
+                        value="something">
+                    <label class="form-check-label text-sm" for="check">Quần lót</label>
+                </div>
+                <div class="form-check mb-2">
+                    <input type="checkbox" class="form-check-input mr-5 w-5 h-5" id="check" name="option"
+                        value="something">
+                    <label class="form-check-label text-sm" for="check">Phụ kiện</label>
+                </div>
+            </div>
+
+            <div>
+                <p class="mt-4 mb-3 text-gray-500">Phù hợp với</p>
+                <div class="form-check mb-2 ">
+                    <input type="checkbox" class="form-check-input mr-5 w-5 h-5" id="check" name="option"
+                        value="something">
+                    <label class="form-check-label text-sm " for="check">Mặc ở nhà</label>
+                </div>
+                <div class="form-check mb-2">
+                    <input type="checkbox" class="form-check-input mr-5 w-5 h-5" id="check" name="option"
+                        value="something">
+                    <label class="form-check-label text-sm " for="check">Chơi thể thao</label>
+                </div>
+                <div class="form-check mb-2">
+                    <input type="checkbox" class="form-check-input mr-5 w-5 h-5" id="check" name="option"
+                        value="something">
+                    <label class="form-check-label text-sm " for="check">Mặc hàng ngày</label>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="offcanvas offcanvas-end " id="demo1">
+        <div class="offcanvas-header mx-3">
+            <h1 class="offcanvas-title text-xl">Giỏ hàng</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <hr class="mx-3">
+        <div class="offcanvas-body my-2">
+            <div class="row mb-3 d-flex align-items-center">
+                <img src="img/SapPham/1.jpg" class=" col-2 w-28 flex-grow-0">
+                <h1 class="col-4 text-base flex-shrink-0">Pack 3 Quần Short Nam kẻ sọc Basics</h1>
+                <input type="number" value="1" min="0" max="99" step="1"
+                    class="border border-dark rounded-xl text-center h-7 col-2 flex-shrink-1">
+                <h1 class="col-2 text-sm flex-shrink-2">199.000đ</h1>
+            </div>
+            <div class="row mb-3 d-flex align-items-center">
+                <img src="img/SapPham/1.jpg" class=" col-2 w-28 flex-grow-0">
+                <h1 class="col-4 text-base flex-shrink-0">Pack 3 Quần Short Nam kẻ sọc Basics</h1>
+                <input type="number" value="1" min="0" max="99" step="1"
+                    class="border border-dark rounded-xl text-center h-7 col-2 flex-shrink-1">
+                <h1 class="col-2 text-sm flex-shrink-2">199.000đ</h1>
+            </div>
+            <div class="row mb-3 d-flex align-items-center">
+                <img src="img/SapPham/1.jpg" class=" col-2 w-28 flex-grow-0">
+                <h1 class="col-4 text-base flex-shrink-0">Pack 3 Quần Short Nam kẻ sọc Basics</h1>
+                <input type="number" value="1" min="0" max="99" step="1"
+                    class="border border-dark rounded-xl text-center h-7 col-2 flex-shrink-1">
+                <h1 class="col-2 text-sm flex-shrink-2">199.000đ</h1>
+            </div>
+            <div class="row mb-3 d-flex align-items-center">
+                <img src="img/SapPham/1.jpg" class=" col-2 w-28 flex-grow-0">
+                <h1 class="col-4 text-base flex-shrink-0">Pack 3 Quần Short Nam kẻ sọc Basics</h1>
+                <input type="number" value="1" min="0" max="99" step="1"
+                    class="border border-dark rounded-xl text-center h-7 col-2 flex-shrink-1">
+                <h1 class="col-2 text-sm flex-shrink-2">199.000đ</h1>
+            </div>
+            <div class="row mb-3 d-flex align-items-center">
+                <img src="img/SapPham/1.jpg" class=" col-2 w-28 flex-grow-0">
+                <h1 class="col-4 text-base flex-shrink-0">Pack 3 Quần Short Nam kẻ sọc Basics</h1>
+                <input type="number" value="1" min="0" max="99" step="1"
+                    class="border border-dark rounded-xl text-center h-7 col-2 flex-shrink-1">
+                <h1 class="col-2 text-sm flex-shrink-2">199.000đ</h1>
+            </div>
+            <div class="row mb-3 d-flex align-items-center">
+                <img src="img/SapPham/1.jpg" class=" col-2 w-28 flex-grow-0">
+                <h1 class="col-4 text-base flex-shrink-0">Pack 3 Quần Short Nam kẻ sọc Basics</h1>
+                <input type="number" value="1" min="0" max="99" step="1"
+                    class="border border-dark rounded-xl text-center h-7 col-2 flex-shrink-1">
+                <h1 class="col-2 text-sm flex-shrink-2">199.000đ</h1>
+            </div>
+            <div class="row mb-3 d-flex align-items-center">
+                <img src="img/SapPham/1.jpg" class=" col-2 w-28 flex-grow-0">
+                <h1 class="col-4 text-base flex-shrink-0">Pack 3 Quần Short Nam kẻ sọc Basics</h1>
+                <input type="number" value="1" min="0" max="99" step="1"
+                    class="border border-dark rounded-xl text-center h-7 col-2 flex-shrink-1">
+                <h1 class="col-2 text-sm flex-shrink-2">199.000đ</h1>
+            </div>
+            <div class="row mb-3 d-flex align-items-center">
+                <img src="img/SapPham/1.jpg" class=" col-2 w-28 flex-grow-0">
+                <h1 class="col-4 text-base flex-shrink-0">Pack 3 Quần Short Nam kẻ sọc Basics</h1>
+                <input type="number" value="1" min="0" max="99" step="1"
+                    class="border border-dark rounded-xl text-center h-7 col-2 flex-shrink-1">
+                <h1 class="col-2 text-sm flex-shrink-2">199.000đ</h1>
+            </div>
+            <div class="row mb-3 d-flex align-items-center">
+                <img src="img/SapPham/1.jpg" class=" col-2 w-28 flex-grow-0">
+                <h1 class="col-4 text-base flex-shrink-0">Pack 3 Quần Short Nam kẻ sọc Basics</h1>
+                <input type="number" value="1" min="0" max="99" step="1"
+                    class="border border-dark rounded-xl text-center h-7 col-2 flex-shrink-1">
+                <h1 class="col-2 text-sm flex-shrink-2">199.000đ</h1>
+            </div>
+
+
+        </div>
+        <hr>
+        <div class="d-flex justify-between mt-2 mx-3">
+            <h1 class="font-bold text-lg">Tổng tiền: </h1>
+            <h1 class="font-semibold text-lg">199.000đ</h1>
+        </div>
+        <div class="container-fluid mt-2">
+            <a href="../ASM/Cart.html" class="btn btn-dark w-full">Thanh toán</a>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid ">
+                <a class="navbar-brand" href="../ASM/index.html">MenStore</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav m-auto mb-2 mb-lg-0 text-lg ">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="../ASM/index.html">Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../ASM/sanpham.html">Sản phẩm</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../ASM/nuochoa.html">Nước hoa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sản xuất riêng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../ASM/lienhe.html">Góp ý</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Về chúng tôi</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Tìm sản phẩm" aria-label="Search">
+                        <button class="btn btn-outline-dark" type="submit">Tìm</button>
+                        <a href="" data-bs-toggle="modal" data-bs-target="#myModal"><i
+                                class="bi bi-person-square"></i></a>
+                        <a href="" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo1"><i
+                                class="bi bi-cart3"></i></a>
+                    </form>
+                    <div class="modal container " id="myModal">
+                        <div class="modal-dialog ">
+                            <div class="modal-content grid md:grid-cols-2 grid-cols-1" style="width: 1000px;">
+                                <div class="modal-body mt-3 pl-10 pt-10">
+                                    <h1 class="text-3xl font-semibold">Đăng nhập</h1>
+                                    <p class="text-black font-light text-sm mt-3">Đăng nhập để không bỏ lỡ quyền lợi
+                                        tích lũy và
+                                        hoàn tiền cho bất kì đơn hàng nào</p>
+                                    <br>
+                                    <h3 class="font-semibold text-sm mb-3">Đăng nhập hoặc đăng ký(miễn phí)</h3>
+                                    <div class="row mb-3">
+                                        <button class="col-2"><img
+                                                src="img/google-logo-on-transparent-background-popular-search-engine-google-logotype-symbol-icon-google-sign-stock-free-vector.jpg"
+                                                alt="" class="img-thumbnail w-10"></button>
+                                        <button class="col-2"><img src="img/8049c257f8648ff8380b94595b7039c8.jpg" alt=""
+                                                class="img-thumbnail w-10"></button>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <hr class="flex-grow-1">
+                                        <p class="flex-shrink-0">Hoặc</p>
+                                        <hr class="flex-grow-1">
+                                    </div>
+                                    <form class="space-y-6" action="#" method="POST">
+                                        <div>
+                                            <label for="email"
+                                                class="block text-sm font-medium leading-6 text-gray-900">Địa chỉ
+                                                Email/SĐT</label>
+                                            <div class="mt-2">
+                                                <input id="email" name="email" type="email" autocomplete="email"
+                                                    required
+                                                    class="block w-full rounded-full border-2 pl-5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-black focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <div class="flex items-center justify-between">
+                                                <label for="password"
+                                                    class="block text-sm font-medium leading-6 text-gray-900">Mật
+                                                    khẩu</label>
+
+                                            </div>
+                                            <div class="mt-2">
+                                                <input id="password" name="password" type="password"
+                                                    autocomplete="current-password" required
+                                                    class="block w-full rounded-full border-2 pl-5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-black focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                <div class="text-sm mt-3 d-flex flex-row-reverse">
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#myModal2"
+                                                        class="font-semibold text-indigo-600 hover:text-indigo-500 ">Quên
+                                                        mật khẩu?</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <button type="submit"
+                                                class="flex w-full justify-center rounded-full h-10 bg-black px-3 py-1.5 text-sm font-semibold text-white hover:bg-slate-700">Đăng
+                                                nhập
+                                            </button>
+                                        </div>
+                                    </form>
+                                    <div class="mt-3 d-flex justify-start text-sm text-indigo-600">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#myModal1">Đăng kí tài khoản
+                                            mới</a>
+                                    </div>
+                                </div>
+                                <div class="modal-body">
+                                    <a href="">
+                                        <img src="img/mceclip0_94.jpg" alt="">
+                                    </a>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Đóng</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal container " id="myModal1">
+                        <div class="modal-dialog ">
+                            <div class="modal-content grid grid-cols-2" style="width: 1000px;">
+                                <div class="modal-body mt-3 pl-10 pt-10">
+                                    <h1 class="text-3xl font-semibold">Đăng ký</h1>
+                                    <p class="text-black font-light text-sm mt-3">Đăng nhập để không bỏ lỡ quyền lợi
+                                        tích lũy và
+                                        hoàn tiền cho bất kì đơn hàng nào</p>
+                                    <br>
+                                    <h3 class="font-semibold text-sm mb-3">Đăng nhập hoặc đăng ký(miễn phí)</h3>
+                                    <div class="row mb-3">
+                                        <button class="col-2"><img
+                                                src="img/google-logo-on-transparent-background-popular-search-engine-google-logotype-symbol-icon-google-sign-stock-free-vector.jpg"
+                                                alt="" class="img-thumbnail w-10"></button>
+                                        <button class="col-2"><img src="img/8049c257f8648ff8380b94595b7039c8.jpg" alt=""
+                                                class="img-thumbnail w-10"></button>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <hr class="flex-grow-1">
+                                        <p class="flex-shrink-0">Hoặc</p>
+                                        <hr class="flex-grow-1">
+                                    </div>
+                                    <form class="space-y-6" action="#" method="POST">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <input type="text" required
+                                                    class="w-full rounded-full border-2 pl-5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-black focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                                    placeholder="Tên của bạn">
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="text" required
+                                                    class="w-full rounded-full border-2 pl-5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-black focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                                    placeholder="SĐT của bạn">
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <input type="text" required
+                                                class="w-full rounded-full border-2 pl-5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-black focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                                placeholder="Email của bạn">
+                                        </div>
+
+                                        <div>
+                                            <input type="text" id="password" name="password" type="password"
+                                                autocomplete="current-password" required
+                                                class="w-full rounded-full border-2 pl-5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-black focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                                placeholder="Mật khẩu">
+                                        </div>
+
+                                        <div>
+                                            <input type="text" id="password" name="password" type="password"
+                                                autocomplete="current-password" required
+                                                class="w-full rounded-full border-2 pl-5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-black focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                                placeholder="Nhập lại mật khẩu">
+                                        </div>
+
+                                        <div>
+                                            <button type="submit"
+                                                class="flex w-full justify-center rounded-full h-10 bg-black px-3 py-1.5 text-sm font-semibold text-white hover:bg-slate-700">Đăng
+                                                ký
+                                            </button>
+                                        </div>
+                                    </form>
+                                    <div class="mt-3 d-flex justify-start text-sm text-indigo-600">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#myModal">Đăng nhập</a>
+                                    </div>
+                                </div>
+                                <div class="modal-body">
+                                    <a href="">
+                                        <img src="img/mceclip0_94.jpg" alt="">
+                                    </a>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Đóng</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal container mt-60" id="myModal2">
+                        <div class="modal-dialog">
+                            <div class="modal-content" style="width: 800px;">
+                                <div class="modal-body ">
+                                    <h1 class="text-3xl font-semibold text-center my-3">Cấp lại mật khẩu</h1>
+                                    <form class="space-y-6 " action="#" method="POST">
+                                        <div>
+                                            <input type="text" required
+                                                class="w-full rounded-full border-2 pl-5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-black focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                                placeholder="Nhập Email/SĐT của bạn">
+                                        </div>
+                                    </form>
+                                    <div class="justify-center d-flex mt-3">
+                                        <button type="submit"
+                                            class=" w-full   rounded-xl h-10 bg-black px-3 py-1.5 text-sm font-semibold text-white hover:bg-slate-700">Kiểm
+                                            tra
+                                        </button>
+                                    </div>
+                                    <div class="modal-footer h-12">
+                                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Đóng</button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+        </nav>
+
+        <header>
+            <div id="demo" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/BANNER_WINTER_CLT_(ccmaNdbnn)s.png" alt="Los Angeles" class="d-block"
+                            style="width:100%">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/BANNER_WINTER_CLT_(ccmfnlfnal)s.png" alt="Chicago" class="d-block"
+                            style="width:100%">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/cmbsBanner-6_copy.jpg" alt="New York" class="d-block" style="width:100%">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </header>
+
+        <article>
+            <div class="mb-16">
+                <h1 class="text-3xl font-bold mt-24 ml-10 mb-3">TẤT CẢ SẢN PHẨM</h1>
+                <div>
+                    <button class="btn bg-gray-400 text-white hover:bg-black w-32 h-12 text-sm rounded-full ml-10"
+                        type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+                        <i class="bi bi-list mr-2"></i>Hiện bộ lọc
+                    </button>
+                    <button class="btn bg-red-600 text-white hover:bg-black w-32 h-12 text-sm rounded-full ml-3">
+                        Bán chạy
+                    </button>
+                    <button class="btn bg-gray-400 text-white hover:bg-black w-32 h-12 text-sm rounded-full ml-3">
+                        Áo
+                    </button>
+                    <button class="btn bg-gray-400 text-white hover:bg-black w-32 h-12 text-sm rounded-full ml-3">
+                        Quần
+                    </button>
+                    <button class="btn bg-gray-400 text-white hover:bg-black w-32 h-12 text-sm rounded-full ml-3">
+                        Quần lót
+                    </button>
+                    <button class="btn bg-gray-400 text-white hover:bg-black w-32 h-12 text-sm rounded-full ml-3">
+                        Phụ kiện
+                    </button>
+                    <button class="btn bg-gray-400 text-white hover:bg-black w-32 h-12 text-sm rounded-full ml-3">
+                        CM24
+                    </button>
+                </div>
+            </div>
+            <div class="row align-items-center justify-end mr-10 mb-12">
+                <p class="text-gray-500 font-light col-1 flex-shrink-0">PHÂN LOẠI</p>
+                <select class="form-select w-52 rounded-full col-3 flex-grow-0">
+                    <option>Mới nhất</option>
+                    <option>Bán chạy</option>
+                    <option>Giá thấp đến cao</option>
+                    <option>Giá cao đến thấp</option>
+                </select>
+            </div>
+            <div class="container-fluid mb-5" ng-controller="myctrl">
+                <div class="p-2 grid grid-cols-5 gap-4 max-w-full md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
+                    data-bs-toggle="modal" data-bs-target="#myModal3">
+                    <div class="shadow-lg" ng-repeat="sp in sanpham">
+                        <div>
+                            <img src="img/SapPham/{{sp.img}}">
+                        </div>
+                        <div class="mt-3 ml-5">
+                            <ul>
+                                <a href="" class="btn btn-dark w-10 h-4"></a>
+                                <a href="" class="btn bg-green-600 border-black hover:bg-green-800 w-10 h-4"></a>
+                            </ul>
+                            <h3 class="text-black font-light my-1 text-sm">{{sp.name}}</h3>
+                            <span class="block text-gray-600 text-xs mt-2">{{sp.title}}</span>
+                            <h4 class="font-medium text-black mb-8 mt-2">{{sp.price}}</h4>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="modal container " id="myModal3" ng-controller="myctrl">
+                <div class="modal-dialog">
+                    <div class="modal-content grid md:grid-cols-2 grid-cols-1" style="width: 1000px;">
+                        <div class="modal-body">
+                            <a href="">
+                                <img src="img/SapPham/1.jpg" alt="">
+                            </a>
+
+                        </div>
+                        <div class="modal-body mt-3 pl-10 pt-2">
+                            <h1 class="font-bold text-3xl">Pack 3 Quần Short Nam kẻ sọc Basics</h1>
+                            <span class="block text-gray-600 text-lg mt-2">Thoáng mát / Mix màu</span>
+
+                            <div class="row mt-2">
+                                <div class="border-dark border-end col-4 text-xl">
+                                    <a href=""><i class="bi bi-star"></i></a>
+                                    <a href=""><i class="bi bi-star"></i></a>
+                                    <a href=""><i class="bi bi-star"></i></a>
+                                    <a href=""><i class="bi bi-star"></i></a>
+                                    <a href=""><i class="bi bi-star"></i></a>
+                                </div>
+                                <div class="col-8 d-flex justify-center flex-col">
+                                    <p class="text-black text-sm ">Đã bán: 50 (web)</p>
+                                </div>
+                            </div>
+                            <h1 class="mt-3 text-black text-3xl mb-4">199.000đ</h1>
+                            <h1 class="mb-2">Màu sắc: <strong>Mix màu</strong></h1>
+                            <button class="btn btn-dark w-14 h-6 rounded-full"></button>
+                            <div class="d-flex justify-between mt-3 mb-3">
+                                <h1 class="mt-1 text-center">Kích thước: </h1>
+                                <a href="" class="text-blue-600"><u>Hướng dẫn chọn size</u></a>
+                            </div>
+                            <div class="mb-3">
+                                <div class="grid grid-cols-5 gap-x-2">
+                                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-full w-16"
+                                        type="button">S</button>
+                                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-full w-16"
+                                        type="button">M</button>
+                                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-full w-16"
+                                        type="button">L</button>
+                                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-full w-16"
+                                        type="button">XL</button>
+                                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-full w-16"
+                                        type="button">2XL</button>
+                                </div>
+                            </div>
+                            <div class="row mb-6">
+                                <div class="col-1"></div>
+                                <input type="number" value="1" min="0" max="100" step="1"
+                                    class="border border-dark rounded-full px-3 text-center h-10 col-2">
+                                <div class="col-1"></div>
+                                <button type="button" class="btn btn-dark rounded-full px-5 col-7 "><i
+                                        class="bi bi-bag-heart mr-2"></i>Thêm vào giỏ hàng</button>
+                                <div class="col-1"></div>
+                            </div>
+                            <hr>
+                            <div class="grid grid-cols-3 gap-4 mt-6 mb-6">
+                                <div class="d-flex align-items-center flex-col text-center">
+                                    <img src="img/icon6.svg" alt="" class="mb-2">
+                                    <label for="" class="text-xs">Đổi trả cực dễ chỉ cần số điện thoại</label>
+                                </div>
+                                <div class="d-flex align-items-center flex-col text-center">
+                                    <img src="img/icon4.svg" alt="" class="mb-2">
+                                    <label for="" class="text-xs">Miễn phí vận chuyển cho đơn hàng trên 200k</label>
+                                </div>
+                                <div class="d-flex align-items-center flex-col text-center">
+                                    <img src="img/icon5.svg" alt="" class="mb-2">
+                                    <label for="" class="text-xs">60 ngày đổi trả vì bất kì lý do gì</label>
+                                </div>
+                                <div class="d-flex align-items-center flex-col text-center">
+                                    <img src="img/icon2.svg" alt="" class="mb-2">
+                                    <label for="" class="text-xs">Hotline 0339444203 hỗ trợ từ 8h30 - 22h mỗi
+                                        ngày</label>
+                                </div>
+                                <div class="d-flex align-items-center flex-col text-center">
+                                    <img src="img/icon1.svg" alt="" class="mb-2">
+                                    <label for="" class="text-xs">Đến tận nơi nhận hàng trả, hoàn tiền trong 24h</label>
+                                </div>
+                                <div class="d-flex align-items-center flex-col text-center">
+                                    <img src="img/icon3.svg" alt="" class="mb-2">
+                                    <label for="" class="text-xs">Giao hàng nhanh toàn quốc</label>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Đóng</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <hr class="mb-10 mx-2">
+
+            <div class="text-center mb-20">
+                <button class="btn btn-dark rounded-full w-44 h-12">Xem thêm</button>
+                <p class="text-sm text-gray-400 font-light mt-3">Hiển thị 1 - 16 trên tổng số 177 sản phẩm</p>
+            </div>
+
+            <div class="mb-24 px-2">
+                <div class="grid grid-cols-2 gap-4 mt-8 lg:grid-cols-4">
+                    <div class="d-flex justify-center">
+                        <a href="">
+                            <img src="img/mceclip2.png" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="d-flex justify-center">
+                        <a href="">
+                            <img src="img/mceclip2_98.png" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="d-flex justify-center">
+                        <a href="">
+                            <img src="img/mceclip3_29.png" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="d-flex justify-center">
+                        <a href="">
+                            <img src="img/mceclip1_44.png" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+
+        <footer>
+            <div class="card bg-dark px-10">
+                <div class="card-footer text-white  grid grid-cols-3 gap-8 px-10 mt-5 mb-5">
+                    <div class="">
+                        <div class="card-body">
+                            <h5 class="card-title font-bold text-2xl">MenStore lắng nghe bạn!</h5>
+                            <p class="card-text text-gray-400">Chúng tôi luôn trân trọng và mong đợi nhận được mọi ý
+                                kiến đóng góp từ
+                                khách hàng để có thể nâng cấp trải nghiệm dịch vụ và sản phẩm tốt hơn nữa.
+                            </p>
+                            <a href="#" class="btn btn-outline-light p-3 rounded-full mt-10 font-semibold">Đóng góp ý
+                                kiến</a>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="card-body row text-xl">
+                            <div class="d-flex align-items-center">
+                                <div class="col-sm-2 flex-shrink-0">
+                                    <img src="img/icon-hotline.svg">
+                                </div>
+                                <div class="col-sm-10 flex-grow-1">
+                                    <span class="block font-light text-sm">Hotline</span>
+                                    <p>
+                                        <a href="#" class="text-base text-decoration-none">1900.1830</a> -
+                                        <a href="#" class="text-base text-decoration-none">1900.1312</a>
+                                        <br>
+                                        <span class="block text-base">(8:30 - 22:00)</span>
+                                    </p>
+
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mt-4">
+                                <div class="col-sm-2 flex-shrink-0">
+                                    <img src="img/icon-email.svg" alt="" class="my-2">
+                                </div>
+                                <div class="col-sm-10 flex-grow-1">
+                                    <span class="block font-light text-sm">Email</span>
+                                    <p>
+                                        <a href="#" class="text-base">phamthetinhcop1312@gmail.com</a>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class=" flex justify-center">
+                        <div class="row items-center flex justify-center">
+                            <a href="#" class="col-2 ml-3">
+                                <img src="img/mceclip1_43.png" class="w-8">
+                            </a>
+                            <a href="" class="col-2 ml-3">
+                                <img src="img/mceclip0_62.png" class="w-14">
+                            </a>
+                            <a href="" class="col-2 ml-3">
+                                <img src="img/mceclip2_68.png" class="w-14">
+                            </a>
+                            <a href="" class="col-2 ml-3">
+                                <img src="img/icon-instar.svg" class="w-14">
+                            </a>
+                            <a href="" class="col-2 ml-3">
+                                <img src="img/icon-youtube.svg" class="w-14">
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="px-10">
+                    <hr class=" w-full text-white">
+                </div>
+
+                <div class="text-white px-10 mt-16 grid grid-cols-5 mb-10">
+                    <div class="">
+                        <h1 class="font-bold text-sm">MenClub</h1>
+                        <div class="mt-10 text-gray-300 text-xs">
+                            <a href="#" class="block hover:text-yellow-300">Đăng kí thành viên</a>
+                            <br>
+                            <a href="" class="block hover:text-yellow-300">Ưu đãi & Đặc quyền</a>
+                        </div>
+                    </div>
+
+                    <div class="">
+                        <h1 class="font-bold text-sm">CHÍNH SÁCH</h1>
+                        <div class="mt-10 text-gray-300 text-xs">
+                            <a href="#" class="block hover:text-yellow-300">Chính sách đổi trả 60 ngày</a>
+                            <br>
+                            <a href="" class="block hover:text-yellow-300">Chính sách khuyến mãi</a>
+                            <br>
+                            <a href="" class="block hover:text-yellow-300">Chính sách bảo mật</a>
+                            <br>
+                            <a href="" class="block hover:text-yellow-300">Chính sách giao hàng</a>
+                        </div>
+                        <h1 class="font-bold text-sm mt-10">MenStore.Me</h1>
+                        <div class="mt-10 text-gray-300 text-xs">
+                            <a href="#" class="block">Lịch sử thay đổi website</a>
+                        </div>
+                    </div>
+
+                    <div class="">
+                        <h1 class="font-bold text-sm">CHĂM SÓC KHÁCH HÀNG</h1>
+                        <div class="mt-10 text-gray-300 text-xs">
+                            <a href="#" class="block hover:text-yellow-300">Trải nghiệm mua sắm 100% hài lòng</a>
+                            <br>
+                            <a href="">Hỏi đáp - FAQs</a>
+                        </div>
+                        <h1 class="font-bold text-sm mt-10">KIẾN THỨC MẶC ĐẸP</h1>
+                        <div class="mt-10 text-gray-300 text-xs">
+                            <a href="#" class="block hover:text-yellow-300">Hướng dẫn chọn size</a>
+                            <br>
+                            <a href="" class="block hover:text-yellow-300">Blog</a>
+                            <br>
+                            <a href="" class="block hover:text-yellow-300">Group mặc đẹp sống chất</a>
+                        </div>
+                    </div>
+
+                    <div class="">
+                        <h1 class="font-bold text-sm">TÀI LIỆU - TUYỂN DỤNG</h1>
+                        <div class="mt-10 text-gray-300 text-xs">
+                            <a href="#" class="block hover:text-yellow-300 ">Tuyển dụng</a>
+                            <br>
+                            <a href="" class="block hover:text-yellow-300">Đăng ký bản quyền</a>
+                        </div>
+                        <h1 class="font-bold text-sm mt-10">VỀ MenStore</h1>
+                        <div class="mt-10 text-gray-300 text-xs">
+                            <a href="#" class="block hover:text-yellow-300 ">MenStore 1312</a>
+                            <br>
+                            <a href="" class="block hover:text-yellow-300">DVKH xuất sắc</a>
+                            <br>
+                            <a href="" class="block hover:text-yellow-300">Câu chuyện về MenStore</a>
+                            <br>
+                            <a href="" class="block hover:text-yellow-300">Nhà máy</a>
+                            <br>
+                            <a href="" class="block hover:text-yellow-300">Casre & Share</a>
+                        </div>
+                    </div>
+
+                    <div class="">
+                        <h1 class="font-bold text-sm">ĐỊA CHỈ LIÊN HỆ</h1>
+                        <div class="mt-10 text-gray-300 text-xs">
+                            <p class="block leading-relaxed"><u>Văn phòng Hà Nội:</u> Tầng 3-4, Tòa nhà BMM, KM2, Đường
+                                Phùng
+                                Hưng, Phường Phúc La, Quận Hà Đông, TP Hà Nội</p>
+                            <br>
+                            <p class="block leading-relaxed"><u>Văn phòng Tp HCM:</u> Lầu 1, Số 163 Trần Trọng Cung,
+                                Phường
+                                Tân Thuận Đông, Quận 7, Tp. Hồ Chí Minh</p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="px-10 mb-10">
+                    <hr class=" w-full text-white">
+                </div>
+
+                <div class="text-white px-10 mb-20">
+                    <span class="block text-xs">@ CÔNG TY TNHH FASTECH ASIA
+                        <br>
+                        Mã số doanh nghiệp: 0108617038. Giấy chứng nhận đăng ký doanh nghiệp do Sở Kế hoạch và Đầu tư TP
+                        Hà Nội cấp lần đầu ngày 20/02/2019.</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+
+    <script>
+        var app = angular.module("myapp", []);
+        app.controller("myctrl", myfunc);
+        function myfunc($scope) {
+
+            $scope.sanpham =
+                [
+                    {
+                        "img": "1.jpg",
+                        "name": "Pack 3 Quần Short Nam kẻ sọc Basics",
+                        "title": "Thoáng mát / Mix màu",
+                        "price": "199.000đ"
+                    },
+                    {
+                        "img": "2.jpg",
+                        "name": "Áo Nỉ chui đầu Lifewear",
+                        "title": "Giữ ấm / Xám sáng",
+                        "price": "249.000đ"
+                    },
+                    {
+                        "img": "3.jpg",
+                        "name": "Quần Shorts Nam Gym 5' Essentials",
+                        "title": "Co giãn / Đen",
+                        "price": "199.000đ"
+                    },
+                    {
+                        "img": "4.jpg",
+                        "name": "Áo Sweatshirt Thể Thao Active",
+                        "title": "Vải Cotton / 360GSM / Nâu",
+                        "price": "329.000đ"
+                    },
+                    {
+                        "img": "5.jpg",
+                        "name": "Áo dài tay Cotton Compact V2",
+                        "title": "Thoáng mát / Đen",
+                        "price": "199.000đ"
+                    },
+                    {
+                        "img": "6.jpg",
+                        "name": "Áo Nỉ chui đầu Essentials",
+                        "title": "Cotton 360GSM / Đen",
+                        "price": "299.000đ"
+                    },
+                    {
+                        "img": "7.jpg",
+                        "name": "Áo Khoác Nam chạy bộ Fast & Free",
+                        "title": "Siêu nhẹ / Đen",
+                        "price": "499.000đ"
+                    },
+                    {
+                        "img": "8.jpg",
+                        "name": "Combo 3 Trunk Bamboo",
+                        "title": "Kháng khuẩn / Xanh Navy",
+                        "price": "219.000đ"
+                    },
+                    {
+                        "img": "9.jpg",
+                        "name": "Quần Shorts Nam Daily Short",
+                        "title": "Sợi Sorona / Xám xanh",
+                        "price": "199.000đ"
+                    },
+                    {
+                        "img": "10.jpg",
+                        "name": "Quần dài Daily Pants",
+                        "title": "Excool / Đen",
+                        "price": "269.000đ"
+                    },
+                    {
+                        "img": "11.jpg",
+                        "name": "Quần Dài Nam Kaki Excool",
+                        "title": "Slim fit",
+                        "price": "439.000đ"
+                    },
+                    {
+                        "img": "12.jpg",
+                        "name": "Quần Jeans Nam Copper Denim Straight",
+                        "title": "Thoải mái / Xanh Garment",
+                        "price": "529.000đ"
+                    },
+                    {
+                        "img": "13.jpg",
+                        "name": "Áo Thể Thao dài tay Active V2",
+                        "title": "Thoáng khí / Xanh ngọc",
+                        "price": "159.000đ"
+                    },
+                    {
+                        "img": "14.jpg",
+                        "name": "Quần Jogger Nam UT đa năng",
+                        "title": "Co giãn / Đen",
+                        "price": "429.000đ"
+                    },
+                    {
+                        "img": "15.jpg",
+                        "name": "Quần Jogger Nam Excool",
+                        "title": "Co giãn / Xanh Navy",
+                        "price": "279.000đ"
+                    },
+                    {
+                        "img": "16.jpg",
+                        "name": "Quần Nỉ Jogger Essentials",
+                        "title": "Cotton 360GSM / Xanh Navy",
+                        "price": "329.000đ"
+                    },
+                    {
+                        "img": "17.jpg",
+                        "name": "Quần Dài Nam Thể Thao Pro Active",
+                        "title": "Chống nhăn / Xám phối đen",
+                        "price": "329.000đ"
+                    },
+                    {
+                        "img": "18.jpg",
+                        "name": "Quần Jeans Nam Basics dáng Straight",
+                        "title": "Co giãn / Xanh đậm",
+                        "price": "459.000đ"
+                    },
+                ];
+
+
+
+
+        }
+    </script>
+</body>
+
+
+
+</html>

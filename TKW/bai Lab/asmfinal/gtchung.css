@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.swapper{
+    width: 1400px;
+    margin: 0 auto;
+}
+/*--header--*/
+.swapper>header{
+    background: url('../img/caodangfpt.png');
+    background-size: 100% 100%;
+    height: 0px;
+    padding-bottom: 25%;
+    position: relative;
+    text-decoration: none;
+}
+.swapper header ul a{
+    font-size: small;
+    display: inline;
+    font-variant: normal;
+    color: white;
+}
+.a1 a{
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.a1 a:hover{
+    color: yellow;
+    text-decoration: underline;
+}
+/*nav*/
+.swapper>nav{
+    line-height: 50px;
+    background-color: orangered;
+    color: white;
+    text-align: center;
+    font-variant: small-caps;
+    font-size: medium;
+    position: relative;
+}
+.menu>ul{
+    background-color: orangered;
+    width: 100%;
+    text-align: center;
+    margin: 0 ;
+}
+.menu>ul>li{
+    display: inline-block;
+    line-height: 50px;
+    width: 15%;
+
+}
+.menu>li:hover>.sub_menu{
+    display: block;
+}
+.menu a{
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+.menu a:hover{
+    color: black;
+    background-color: yellow;
+
+}
+.sub_menu li a{
+    color: black;
+    background-color: white;
+    border-bottom: 1px dotted black;
+}
+.sub_menu li a:hover{
+    color: red;
+    text-decoration: none;
+    background-color: wheat;
+}
+.sub_menu{
+    display: none;
+    position: absolute;
+    text-align: left;
+    font-variant: normal;
+    width: 250px;
+    box-shadow: 0 0 3px gray;
+}
+.menu li:hover .sub_menu{
+    display: block;
+    
+}
+.swapper>footer{
+    border-top: 5px solid orangered;
+    text-align: left;
+    font-variant: small-caps;
+    clear: both;
+}
+.swapper>article{
+    width: auto;
+    height: auto;
+    padding: 50px;
+    margin: 10px;
+
+}
+.sub_men{
+    display: none;
+    position: absolute;
+    top: 204px;
+    left: 251px;
+    width: 250px;
+    font-variant: inherit;
+    box-shadow: 0 0 3px gray;
+    list-style-type: none;
+}
+.sub_menu>li:hover .sub_men{
+    display: block;
+}
+footer div{
+    background-color: #192041;
+    width: 33.33%;
+    float: left;
+    color: white;
+    height: 400px;
+}
+.hinh1 h4:hover{
+    color: orangered;
+}
+.hinh2 h4:hover{
+    color: orangered;
+}
+.tinhpt2{
+    max-width: 100%;
+    display: block;
+    height: 80%;
+    width: 80%;
+    object-fit: cover;
+    object-position: 25% 50%;
+}
+.swapper article div{
+    align-items: center;
+}

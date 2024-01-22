@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        ul>li{
+            list-style-type: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .menu li{
+            float: left;
+            background: grey;
+            padding: 10px;
+            min-width: max-content;
+        }
+        .menu>li{
+            position: relative;
+        }
+        .menu li a{
+            color: white;
+        }
+        .menu li:hover{
+            background: orange;
+        }
+        .sub-menu{
+            position: absolute;
+            top: 38px;
+            left: 0px;
+            display: none;
+        }
+        .sub-menu li{
+            clear: both;
+        }
+        .menu>li:hover .sub-menu{
+            display: block;
+        }
+        .sub-menu1{
+            position: absolute;
+            top: 3px;
+            left: 93px;
+            display: none;
+        }
+        .sub-menu>li:hover .sub-menu1{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li><a href="#">Trang chủ</a></li>
+        <li><a href="#">Giới thiệu</a></li>
+        <li><a href="#">Dịch vụ</a>
+            <ul class="sub-menu">
+                <li><a href="#">Sub menu1</a>
+                    <ul class="sub-menu1">
+                        <li><a href="">submenu1</a></li>
+                        <li><a href="">submenu2</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Sub menu2</a></li>
+                <li><a href="#">Sub menu3</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Liên hệ</a></li> 
+    </ul>
+</body>
+</html>

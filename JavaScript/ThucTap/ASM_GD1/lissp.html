@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASM_GD1</title>
+    <link rel="stylesheet" href="css/bai1.css">
+    <script src="js/bai1.js"></script>
+</head>
+<body>
+    <section class="sanphammoi">
+      <script>
+        for(i=0;i<listSP.length;i++)
+        {
+            var sanPham=listSP[i];
+            var name=sanPham.tenSP;
+            var value=sanPham.gia;
+            var hinh=sanPham.hinh;
+        document.write(`
+         <div class="sp">
+           <img src="${hinh}" alt="ok" class="hinh">
+           <div class="info">
+            <p class="gia">${value}</p>
+            <h3 class="tensp">${name}</h3>
+           </div>
+           <div class="icon" id="icon">
+             <img src="hinh/plus.png" alt="">
+             <img src="hinh/shopping-cart.png" alt="">
+             <img src="hinh/like-icon.png" alt="">
+           </div>
+         </div>`);
+        }
+     </script>  
+    </section>
+</body>
+</html>

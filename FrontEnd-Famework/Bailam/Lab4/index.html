@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/angular.min.js"></script>
+
+</head>
+
+<body ng-app="myapp">
+    <div class="container" ng-controller="myctrl">
+        <header class="bg-info d-flex justify-content-center align-items-center" style="height: 120px;">
+            <div id="chao" class="text-white ">Chào {{hoten}}</div>
+        </header>
+
+        <main class="bg-light" style="min-height: 300px;"></main>
+
+
+        <footer class="bg-warning d-flex align-items-center justify-content-center">
+            <div>Họ tên: <b>{{hoten}}</b>
+                <br>
+                Email: <b>{{email}}</b>
+            </div>
+        </footer>
+
+    </div>
+
+
+
+    <script>
+        var app = angular.module("myapp", []);
+        app.controller("myctrl", myfunc);
+        function myfunc($scope){
+            var ht = sessionStorage.getItem("hoten");
+            if(ht!= "") $scope.hoten = ht;
+
+            var email = sessionStorage.getItem("email");
+            if(ht!= "") $scope.email = email;
+            
+        }
+    </script>
+</body>
+
+</html>

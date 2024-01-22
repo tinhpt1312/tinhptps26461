@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/angular.min.js"></script>
+</head>
+
+<body ng-app="myapp">
+    <div class="container" ng-controller="myctrl">
+        <div class="card ">
+            <h2 class="card-footer text-center border-bottom border-dark">{{titlesapp}}</h2>
+            <div class="card-body ">
+                <p class="row"><span class="block col-4">Tên đăng nhập: </span> <b class="col-8">{{sv.username}}</b></p>
+                <hr>
+                <p class="row"><span class="block col-4">Họ tên: </span> <b class="col-8">{{sv.fullname}}</b></p>
+                <hr>
+                <p class="row"><span class="block col-4">Email: </span> <b class="col-8">{{sv.gender}}</b></p>
+                <hr>
+                <p class="row"><span class="block col-4">Ngày sinh: </span > <b class="col-8">{{sv.birthday}}</b></p>
+                <hr >
+                <p class="row"><span class="block col-4">Học phí: </span> <b class="col-8">{{sv.schoolfee}}</b></p>
+                <hr>
+                <p class="row"><span class="block col-4">Điểm trung bình: </span> <b class="col-8">{{sv.mark}}</b></p>
+                <hr>
+            </div>
+            <h6 class="card-footer text-danger border-top border-dark">Giới tính: True là Nam, False là Nữ</h6>
+        </div>
+    </div>
+
+
+
+    <script>
+        var app = angular.module("myapp", []);
+        app.controller("myctrl", myfunc)
+        function myfunc($scope) {
+            $scope.titlesapp = "Thông tin sinh viên";
+            $scope.sv = {
+                username: "teonv",
+                password: "123",
+                fullname: "Nguyễn Văn Tèo",
+                email: "teonv@fpt.edu.vn",
+                gender: true,
+                birthday: "2004-03-14",
+                schoolfee: 15990000,
+                mark: 8
+            }
+        }
+    </script>
+</body>
+
+</html>

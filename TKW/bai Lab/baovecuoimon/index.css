@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.swapper{
+    width: 1400px;
+    margin: 0 auto;
+    height: 3000px;
+}
+.tinhpt1{
+    text-align: center;
+    padding: 5%;
+}
+.swapper .tinhpt2{
+    background-color: #ff4500;
+    line-height: 60px;
+}
+.swapper .tinhpt2 li{
+    text-align: center;
+    font-variant: small-caps;
+    font-size: medium;
+    display: inline;
+    margin: 10px;
+}
+.tinhpt2 li a{
+    text-decoration: none;
+    color: white;
+}
+table {
+    border-collapse: collapse;
+    border-color: black;
+}
+input{
+    padding: 5px;
+}
+select{
+    width: 100%;
+    height: 45px;
+}
+button{
+    background-color: orangered;
+    color: white;
+    width: 100px;
+    height: 40px;
+    border-radius: 7px;
+    font-size: 100%;
+    font-variant: small-caps;
+}
+button:hover{
+    background-color: yellow;
+    color: black;
+}
+.a1 input{
+    height: 20px;
+    width: 5%;
+}
+.swapper .tinhpt2 li a:hover{
+    color: yellow;
+    text-decoration: underline;
+}
+

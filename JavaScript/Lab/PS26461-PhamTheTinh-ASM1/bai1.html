@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../PS26461-PhamTheTinh-ASM1/css/listsp.css">
+    <script src="../PS26461-PhamTheTinh-ASM1/js/bai1.js"></script>
+</head>
+
+<body>
+    <section class="sanphammoi">
+        <script>
+            for (var i = 0; i < listSP.length ; i++) {
+            var sp = listSP[i];
+            var tensp = sp.tenSP;
+            var gia = sp.gia;
+            var hinh = sp.hinh;
+            document.write(`
+            <div class= "sp" onmouseover="hienicon(this)" onmouseout="anicon(this)">
+                <img src="${hinh}" width="100%">
+                    <div class="info">
+                        <p class="gia">${gia}</p>
+                        <h3 class="tensp">${tensp}</h3>
+                    </div>
+                    <div class="icon" id="icon">
+                        <img src="../PS26461-PhamTheTinh-ASM1/img/like-icon.png" alt="">
+                            <img src="../PS26461-PhamTheTinh-ASM1/img/Hand-thumbs-up-like-2-icon.png" alt="">
+                                <img src="../PS26461-PhamTheTinh-ASM1/img/plus.png" alt="">
+                                </div>
+            </div>`);
+            }
+
+        </script>
+    </section>
+</body>
+
+</html>

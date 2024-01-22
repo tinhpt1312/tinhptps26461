@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(120, 186, 206);
+        }
+        .container {
+            width: auto;
+           
+        }
+
+        .container h1 {
+            text-align: center;
+            color: white;
+        }
+
+        .container .container-form {
+            border: 1px solid black;
+            background-color: #ddd; 
+            height: 320px;
+            width: 40%;
+            margin: auto;
+            /* display: flex; */
+            padding: 0 10px;
+            /* justify-content: space-between; */
+            position: relative;
+        }
+
+        .container .container-form .container-label {
+            font-size: 20px;
+            margin-left: 10px;
+            margin-right: 30px;
+            margin-top: 35px;
+        }
+
+        /* .container .container-form .container-label input:value{
+            margin-left: 20px;
+        } */
+
+        .container .container-form .container-label input {
+            height: 30px;
+            padding: 0 20px;
+            font-size: 16px;
+            position: absolute;
+            left: 23%;
+            top: 31px;
+            outline: none;
+            border: 1px solid #000;
+            width: 250px;
+            z-index: 3;
+        }
+
+        .container .container-form .container-label input,
+        .container .container-form .container-labelb input,
+        .container .container-form .container-labelc input{
+            box-shadow: 0 0 5px black;
+        }
+
+        .container .container-form .container-label input:focus,
+        .container .container-form .container-labelb input:focus,
+        .container .container-form .container-labelc input:focus {
+            border-color: blue;
+            box-shadow: 0 0 5px blue;
+        }
+
+        .container .container-form .container-label input,
+        .container .container-form .container-labelb input,
+        .container .container-form .container-button input,
+        .container .container-form .container-buttonb input {
+            border-radius: 26px;
+        }
+
+        .container .container-form .container-button input {
+            height: 32px;
+            outline: none;
+            border: 1px solid #ddd;
+            width: 100px;
+            font-size: 14px;
+            position: absolute;
+            right: 63px;
+            top: 31px;
+            padding-left: 25px;
+
+        }
+
+        .container .container-form .container-labelb {
+            font-size: 20px;
+            margin-left: 10px;
+            margin-top: 40px;
+        }
+
+        .container .container-form .container-labelb input {
+            height: 30px;
+            padding: 0 20px;
+            font-size: 16px;
+            position: absolute;
+            left: 23%;
+            top: 93px;
+            outline: none;
+            border: 1px solid #000;
+            width: 250px;
+            z-index: 3;
+        }
+
+        .container .container-form .container-buttonb input:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .container .container-form .container-button input:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .container .container-form .container-buttonb input {
+            height: 32px;
+            outline: none;
+            border: 1px solid #ddd;
+            width: 100px;
+            font-size: 14px;
+            position: absolute;
+            right: 63px;
+            top: 93px;
+            padding-left: 25px;
+        }
+
+        .container .container-form .container-labelc {
+            font-size: 20px;
+            margin-left: 10px;
+            margin-top: 40px;
+        }
+
+        .container .container-form .container-labelc input {
+            outline: none;
+            border: 1px solid #000;
+            height: 30px;
+            width: 320px;
+            padding: 0 20px;
+            font-size: 16px;
+            margin-left: 44px;
+        }
+
+        .container .container-form .container-papper {
+            font-size: 20px;
+            margin-left: 10px;
+            margin-top: 40px;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            margin-top: 18px;
+        }
+
+        section input {
+            width: 150px;
+            height: 30px;
+            font-size: 18px;
+            outline: none;
+            border: 1px solid #ddd;
+        }
+
+        section input:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .container-papper span {
+            margin-left: 40px;
+        }
+    </style>
+    <script>
+        function danhgiaKQ() {
+            var x = document.getElementById("x").value;
+            var y = document.getElementById("y").value;
+            var traloi = document.getElementById("traloi").value;
+            var dapan = parseInt(x) + parseInt(y);
+            if (traloi == dapan) {
+                document.getElementById("danhgia").innerText = "Bé giỏi quá";
+                document.getElementById("danhgia").style.color = "Blue";
+            } else if (traloi == "") {
+                document.getElementById("danhgia").innerText = "Bé chưa nhập đáp án kìa bé";
+                document.getElementById("danhgia").style.color = "Red";
+            }
+            else if (traloi != dapan) {
+                document.getElementById("danhgia").innerText = "Bé sai rồi";
+                document.getElementById("danhgia").style.color = "Red";
+            }
+        }
+
+        function Random() {
+            return Math.floor(Math.random() * (11 - 1)) + 1;
+        }
+
+        function randomValue() {
+            document.getElementById('x').value = Random();
+            document.getElementById("traloi").value = "";
+            document.getElementById("danhgia").innerHTML = "";
+        }
+
+        function randomValue1() {
+            document.getElementById('y').value = Random();
+            document.getElementById("traloi").value = "";
+            document.getElementById("danhgia").innerText = "";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Bé làm toán cộng</h1>
+        <form id="trochoi" name="frm1" class="container-form">
+            <p class="container-label">
+                <label for="">Số A</label>
+                <input type="number" placeholder="Nhập số từ 1-10" id="x">
+            </p>
+            <p class="container-button">
+                <input type="button" value="Random" onclick="randomValue()">
+            </p>
+
+            <p class="container-labelb">
+                <label for="">Số B</label>
+                <input type="number" placeholder="Nhập số từ 1-10" id="y">
+            </p>
+            <p class="container-buttonb">
+                <input type="button" value="Random" onclick="randomValue1()">
+            </p>
+
+            <p class="container-labelc">
+                <label for="">Trả Lời</label>
+                <input id="traloi" placeholder="Bé nhập câu trả lời đúng nhé">
+            </p>
+
+            <p class="container-papper">
+                <label for="">Kết quả: </label>
+                <span id="danhgia"></span>
+            </p>
+
+            <section>
+                <input type="button" onclick="danhgiaKQ()" id="kiemtra" value="Kiểm tra">
+            </section>
+        </form>
+    </div>
+</body>
+
+</html>

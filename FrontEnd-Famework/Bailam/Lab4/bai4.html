@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <style>
+        .label{
+            font-size: 20px;
+        }
+        .form{
+            padding: 0 20px 30px 30px;
+        }
+
+        .dientich{
+            margin-top: 100px;
+        }
+
+        .container{
+            width: 800px;
+        }
+
+        .form-group{
+            margin-top: 20px;
+        }
+        .form-control{
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body ng-app="myapp">
+    <div class="container" ng-controller="myctrl">
+        <div class="border dientich border-r-8">
+            <h3 class="text-center bg-danger text-white h-20 title">Tính diện tích chu vi</h3>
+            <form class="form">
+                <div class="form-group">
+                    <label for="" class="label">Chiều dài</label>
+                    <input type="number" ng-model="length" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="" class="label">Chiều rộng</label>
+                    <input type="number" ng-model="width" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="" class="label">Diện tích</label>
+                    <div ng-bind="arceage" class="form-control"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="" class="label">Chu vi</label>
+                    <div ng-bind="perimeter" class="form-control"></div>
+                </div>
+
+                <div class="form-group d-flex justify-content-around">
+                    <button type="submit" ng-click="tinhtoan()" class="btn btn-dark">Tính toán</button>
+                    <button type="submit" ng-click="choso()" class="btn btn-dark">Cho số</button>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+
+
+
+    <script>
+        var app = angular.module("myapp", []);
+        app.controller("myctrl", function($scope){
+            $scope.tinhtoan = function(){
+                var a = parseInt($scope.width);
+                var b = parseInt($scope.length);
+                $scope.arceage = a*b;
+                $scope.perimeter = (a+b) *2;
+            }
+
+            $scope.choso = function(){
+                var w1 = Math.round(Math.random() * 100);
+                var w2 = Math.round(Math.random() * 100);
+                $scope.width = w1;
+                $scope.length = w2;
+            }
+        })
+    </script>
+</body>
+
+</html>

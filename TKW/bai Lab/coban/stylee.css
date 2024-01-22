@@ -1,0 +1,25 @@
+header{
+    background: green;
+    height: 100px;
+}
+nav{
+    background: black;
+    height: 30px;
+    color: white;
+}
+main{
+    background: white;
+    height: 300px;
+}
+article{
+    background: red;
+    height: 300px;
+}
+aside{
+    background: violet;
+    height: 300px;
+}
+footer{
+    background: yellow;
+    height: 70px;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../Ps26461-PhamTheTinh-Lab5/bai3.js"></script>
+    <style>
+        body {
+            width: auto;
+            height: 100vh;
+        }
+
+        .container {
+            border: 1px solid black;
+            height: 300px;
+            width: 500px;
+            margin: auto;
+            font-family: monospace;
+            background-color: cadetblue;
+            color: white;
+        }
+        h2{
+            text-align: center;
+        }
+        #ketqua {
+            border: 1px dotted black;
+            height: 100px;
+            width: 300px;
+            color: yellow;
+            text-align: center;
+            margin: auto;
+            font-size: x-large;
+        }
+        form{
+            margin-left: 110px;
+            margin-top: 30px;
+            font-size: larger;
+        }
+        input{
+            width: 20px;
+            height: 20px;
+        }
+        button{
+            margin-top: 30px;
+            width: 100px;
+            height: 30px;
+            background-color: black;
+            color: yellow;
+            font-size: large;
+        }
+        button:hover{
+            color: black;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="papper">
+            <h2>Bạn nhớ tới Mẹ khi nào: </h2>
+            <div id="ketqua"></div>
+            <form>
+                <input type="checkbox" name="me" value="Đói">Đói
+                <input type="checkbox" name="me" value="No">No
+                <input type="checkbox" name="me" value="Bệnh">Bệnh
+                <input type="checkbox" name="me" value="Vui">Vui
+                <input type="checkbox" name="me" value="Buồn">Buồn<br>
+                <button id="btn1" type="button" onclick="check()">Chọn</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

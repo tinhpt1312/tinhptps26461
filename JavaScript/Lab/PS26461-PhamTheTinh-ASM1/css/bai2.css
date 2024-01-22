@@ -1,0 +1,38 @@
+.slideshow
+{
+    width: 1000px;
+    margin: auto;
+    position: relative;
+    height: 350px;
+}
+.slideshow img
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    
+}
+.slideshow #mota
+{
+   position: absolute;
+    top: 90%;
+    left: 40%;
+    font-size: 1.3em;
+    color: white;
+}
+.slideshow .fa-chevron-circle-left
+{
+   position: absolute;
+   top: 45%;
+   left: 30px;
+   font-size: 32px;
+   color:black;
+}
+.slideshow .fa-chevron-circle-right
+{
+   position: absolute;
+   top: 45%;
+   right: 30px;
+   font-size: 32px;
+   color:black;
+}

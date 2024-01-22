@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lexend', sans-serif;
+}
+
+.navbar-brand{
+    font-size: 2rem;
+    color: black;
+    font-family: 'Rubik Glitch', system-ui;
+}
+.navbar-brand:hover{
+    color: rgb(46, 111, 88);
+}
+.nav-link{
+    margin-right: 20px;
+    margin-left: 20px;
+    height: 100%;
+    padding: 20px;
+    align-items: center;
+    color: black;
+    font-weight: 300;
+}
+.nav-link:hover{
+    background-color: black;
+    color: white;
+    
+}
+.bi-person-square{
+    font-size: 30px;
+    color: black;
+    cursor: pointer;
+    margin-left: 50px;
+}
+.bi-person-square:hover{
+    color: rgb(130, 86, 86);
+}
+.bi-cart3{
+    font-size: 30px;
+    color: black;
+    cursor: pointer;
+    margin-left: 20px; 
+}
+.bi-cart3:hover{
+    color: rgb(130, 86, 86);
+}
+
+
+

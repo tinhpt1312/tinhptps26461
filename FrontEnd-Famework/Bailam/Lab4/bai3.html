@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/angular.min.js"></script>
+</head>
+
+<body ng-app="myapp">
+    <div class="container" ng-controller="myctrl">
+
+
+        <table class="table table-hover table-bordered">
+            <thead class="table-danger">
+                <tr class="text-center">
+                    <th>Tên</th>
+                    <th>Giá</th>
+                    <th>Ram</th>
+                    <th>Sim</th>
+                    <th>Pin</th>
+                    <th>Chip</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="dt in phone">
+                    <td>{{dt.ten}}</td>
+                    <td>{{dt.gia}}</td>
+                    <td>{{dt.ram}}</td>
+                    <td>{{dt.sim}}</td>
+                    <td>{{dt.pin}}</td>
+                    <td>{{dt.chip}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    
+
+
+
+    <script>
+        var app = angular.module("myapp", []);
+        app.controller("myctrl", myfunc);
+        function myfunc($scope) {
+
+            $scope.phone =
+                [
+                    {
+                        "ten": "Iphone X",
+                        "gia": "5000000",
+                        "ram": "2GB",
+                        "sim": "1 Nano sim & 1 Esim",
+                        "pin": "4000mAh 20W",
+                        "chip": "Apple A13 pro 3 nhân"
+                    },
+                    {
+                        "ten": "SamSung Note 8",
+                        "gia": "3000000",
+                        "ram": "2GB",
+                        "sim": "1 Nano sim & 1 Esim",
+                        "pin": "3189mAh 20W",
+                        "chip": "Snap dragon 888"
+                    },
+                    {
+                        "ten": "Xiaomi Pro 13",
+                        "gia": "1500000",
+                        "ram": "4GB",
+                        "sim": "2 Nano sim ",
+                        "pin": "4324mAh 20W",
+                        "chip": "Helio snap 3 số 9"
+                    },
+                    {
+                        "ten": "Oppo Reno 3",
+                        "gia": "4500000",
+                        "ram": "5GB",
+                        "sim": "2 Nano sim & 1 Esim",
+                        "pin": "6000mAh 20W",
+                        "chip": "MediaTek Helio G85"
+                    }
+                ];
+
+
+        }
+    </script>
+</body>
+
+</html>

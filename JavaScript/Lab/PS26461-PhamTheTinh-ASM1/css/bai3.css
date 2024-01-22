@@ -1,0 +1,38 @@
+#nut 
+{ 
+    text-align: center;
+}
+#nut button 
+{
+     width: 120px; 
+     height: 30px; 
+     background-color: darkcyan;
+}   
+#giohang 
+{  
+    width: 700px; 
+    margin: auto; 
+} 
+#tongtiengiohang 
+{ 
+    text-align: center; 
+    font-size: 1.2em; 
+    color: darkgreen;
+}
+#giohang .row 
+{
+    display: grid;
+    grid-template-columns: 50px 350px 100px 100px 90px;
+    background-color: aqua;
+}
+#giohang .row *
+{
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+}
+#giohang .row input
+{
+    width: 60px;
+    text-align: center;
+}

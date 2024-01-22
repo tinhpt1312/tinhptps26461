@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var img = [];
+        var index = 0;
+        var sohinh = 9;
+        for (var i = 1; i < sohinh; i++){
+            img[i] = new Image();
+            img[i].src = "../Ps26461-PhamTheTinh-Lab6/img/"+i+".png";
+        }
+
+        function next(){
+            index++;
+            if(index >= img.length) index = 0;
+            var anh = document.getElementById("anh");
+            anh.src = img[index].src
+        }
+
+        function prev(){
+            index--;
+            if(index < 0) index = img.length - 1;
+            var anh = document.getElementById("anh");
+            anh.src = img[index].src
+        }
+
+        function last(){
+            index = img.length - 1;
+            var anh = document.getElementById("anh");
+            anh.src = img[index].src
+        }
+
+        function first(){
+            index = 1;
+            var anh = document.getElementById("anh");
+            anh.src = img[index].src
+        }
+    </script>
+    <style>
+        body{
+            width: auto;
+            /* display: flex;
+            justify-content: center; */
+            height: 150vh;
+            background-color: cadetblue;
+        }
+        h1{
+         
+            font-family: monospace;
+            text-align: center;
+            color: rgb(236, 245, 240);
+        }
+        .container{
+            margin-top: 10px;
+            margin: auto;
+            width: 800px;
+            border: 1px solid black;
+            box-shadow: 0 0 5px black;
+            background-color: white;
+        }
+
+        .container img{
+            padding: 5%;
+            /* padding: 10px;
+            text-align: center; */
+        }
+
+        .container .btn-container{
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .container .btn-container input{
+            width: 13%;
+            height: 40px;
+            font-size: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
+            outline: none;
+            border: 1px solid #ddd;
+        }
+        .container .btn-container input:hover{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="papper">
+    <h1>Uchiha Itachi</h1>
+    <div class="container">
+        <img src="../Ps26461-PhamTheTinh-Lab6/img/1.png" id="anh" width="90%">
+        <div class="btn-container">
+            <!-- <a href="#"> -->
+            <input type="button" value="<<" onclick="first()">
+            <input type="button" value="<" onclick="prev()">
+            <input type="button" value=">" onclick="next()">
+            <input type="button" value=">>" onclick="last()">
+            
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

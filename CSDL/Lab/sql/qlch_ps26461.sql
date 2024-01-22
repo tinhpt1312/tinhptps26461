@@ -1,0 +1,89 @@
+-- Bai on tap co so du lieu
+
+-- 1. create database
+
+CREATE DATABASE qldh_ps26461;
+
+USE qldh_ps26461;
+
+-- 2. create table 
+
+CREATE TABLE KHACHHANG (
+    MAKH VARCHAR(5) NOT NULL,
+    TENKH VARCHAR(30) NOT NULL,
+    DIACHI VARCHAR(100) NULL,
+    DTDD VARCHAR(15) NULL,
+    CONSTRAINT PK_KHACHHANG PRIMARY KEY(MAKH)
+);
+
+CREATE TABLE HANGHOA(
+    MAHH VARCHAR(2) NOT NULL, 
+    TENHH VARCHAR(50) NOT NULL,
+    DVT VARCHAR(5) NULL,
+    SLCON INT NULL,
+    DONGIAHH double NULL,
+    CONSTRAINT PK_HANGHOA PRIMARY KEY(MAHH)
+);
+
+CREATE TABLE DONDATHANG(
+    MADAT VARCHAR(4) NOT NULL,
+    NGAYDAT DATE ,
+    MAKH VARCHAR(5) NOT NULL,
+    CONSTRAINT PK_DONDATHANG PRIMARY KEY(MADAT),
+	CONSTRAINT FK_KHACHHANG_DONDATHANG
+		FOREIGN KEY(MAKH) REFERENCES KHACHHANG(MAKH)
+);
+
+CREATE TABLE CHITIETDATHANG(
+    MADAT VARCHAR(4) NOT NULL,
+    MAHH VARCHAR(2) NOT NULL,
+    SLDAT INT NOT NULL,
+    CONSTRAINT PK_CHITIETDATHANG PRIMARY KEY(MADAT, MAHH),
+	CONSTRAINT FK_HANGHOA_CHITIETDATHANG
+				FOREIGN KEY(MAHH) REFERENCES HANGHOA(MAHH),
+	CONSTRAINT FK_DONDATHANG_CHITIETDATHANG
+				FOREIGN KEY(MADAT) REFERENCES DONDATHANG(MADAT)
+);
+
+-- 3. insert data
+
+INSERT INTO HANGHOA VALUES
+    ('BU', 'Bàn ủi Pháp', 'Cái', 60, 350000),
+    ('CD', 'Nồi cơm điện Sharp', 'Cái', 100, 700000 ),
+    ('DM', 'Đầu máy Sharp', 'Cái', 75, 1200000),
+    ('MG', 'Máy giặt SenYo', 'Cái', 10, 4700000),
+    ('TL', 'Tủ lạnh Hitachi', 'Cái', 40, 400000),
+    ('TV', 'TiVi JVC 14WS', 'Cái', 33, 4700000);
+
+INSERT INTO KHACHHANG VALUES
+    ('KH001', 'Cửa hàng Phú Lộc', 'Đà Nẵng', '0511.3246135'),
+    ('KH002', 'Cửa hàng Hoàng Gia', 'Quảng Nam', '0510.66333444'),
+    ('KH003', 'Nguyễn Lan Anh', 'Huế', '0988.148248'),
+    ('KH004', 'Công ty TNHH An Phước', 'Đà Nẵng', '0511.6987789'),
+    ('KH005', 'Huỳnh Ngọc Trung', 'Quảng Nam', '0905.888555'),
+    ('KH006', 'Cửa hàng Trung Tín', 'Đà Nẵng', null);
+
+INSERT INTO DONDATHANG VALUES 
+    ('DH01', '2021-02-02', 'KH001'),
+    ('DH02', '2021-02-12', 'KH003'),
+    ('DH03', '2021-01-22', 'KH003'),
+    ('DH04', '2022-03-22', 'KH002'),
+    ('DH05', '2022-04-14', 'KH005'),
+    ('DH06', '2021-08-05', 'KH003'),
+    ('DH07', '2021-11-25', 'KH005');
+
+INSERT INTO CHITIETDATHANG VALUES
+    ('DH01', 'BU', 15),
+    ('DH01', 'DM', 10),
+    ('DH01', 'TL', 4),
+    ('DH02', 'BU', 20),
+    ('DH02', 'TL', 3),
+    ('DH03', 'MG', 8),
+    ('DH04', 'TL', 5),
+    ('DH04', 'TV', 5),
+    ('DH05', 'BU', 12),
+    ('DH05', 'DM', 15),
+    ('DH05', 'MG', 6),
+    ('DH05', 'TL', 5),
+    ('DH06', 'BU', 30),
+    ('DH06', 'MG', 7);

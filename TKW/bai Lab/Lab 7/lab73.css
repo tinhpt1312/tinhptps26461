@@ -1,0 +1,96 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+.container{
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+.container>header{
+    background-image: url('../img/sinhvienfpt.jpg');
+    background-size: 100% 100%;
+    height: 0px;
+    padding-bottom: 25%;
+    position: relative;
+
+}
+header .company {
+    position: absolute;
+    line-height: 40px;
+    background-color: orangered;
+    width: 320px;
+    top: 0px;
+    right: 0px;
+    Border-bottom-left-radius: 30px;
+    text-align: center;
+    box-shadow: 0 0 10px white;
+}
+header .company a{
+    line-height: 40px;
+    background-color: orangered;
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-variant: small-caps;
+    
+}
+.container>nav{
+    line-height: 40px;
+    background-color: orangered;
+    color: white;
+    text-align: center;
+    font-variant: small-caps;
+}
+.container>nav>div a{
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+.a1{
+    width: 1000 px;
+    text-align: left;
+}
+.a2{
+    position: absolute;
+    width: 180px;
+    text-align: right;
+    right: 0px;
+    bottom: 0px;
+}
+.container>nav>div>a:hover{
+    color: yellow;
+    text-decoration: underline;
+}
+.container>header>div>a:hover{
+    color: yellow;
+    text-decoration: underline;
+}
+/* .a12{
+    position: absolute;
+    left: 25px;
+    bottom: 50px;
+} */
+header .company_info{
+    width: 300px;
+    height: 65px;
+    position: absolute;
+    bottom: 30px;
+    left: 15px;
+    box-shadow: 0 0 5px red;
+}
+header .company_info h1{
+    margin: 0;
+    padding: 0;
+    font-variant: small-caps;
+    color: white;
+    font-size: 35px;
+    border-bottom: 1px dotted red;
+}
+header .company_info h3{
+    margin: 0;
+    padding: 0;
+    font-variant: small-caps;
+    color: orangered;
+    letter-spacing: 3px;
+}

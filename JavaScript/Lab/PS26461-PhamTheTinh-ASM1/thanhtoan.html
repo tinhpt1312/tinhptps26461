@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../PS26461-PhamTheTinh-ASM1/js/thanhtoan.js"></script>
+    <link rel="stylesheet" href="../PS26461-PhamTheTinh-ASM1/css/thanhtoan.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="render">
+            <form action="">
+                <h3>THANH TOÁN MUA HÀNG</h3>
+                <div class="render-1">
+                    <label for="">Họ tên: </label><br>
+                    <input type="text" placeholder="Họ tên người nhận" id="hoten"><br>
+                    <em>Nhập họ tên từ 6 đến 30</em><br><br>
+                </div>
+                <div class="render-2">
+                    <label for="">Phương thức thanh toán: </label><br>
+                    <input type="radio" name="gt">Chuyển khoản
+                    <input type="radio" name="gt">Thẻ ATM nội địa
+                    <input type="radio" name="gt">Thanh toán khi nhận hàng <br>
+                    <em>Chọn phương thức thanh toán</em><br><br>
+                </div>
+                <div class="render-3">
+                    <label for="">Chọn tỉnh</label><br>
+                    <select name="" id="">
+                        <option value="">Chọn tỉnh</option>
+                        <option value="">TP. Hà Nội</option>
+                        <option value="">TP. Hồ Chí Minh</option>
+                        <option value="">TP. Cần Thơ</option>
+                        <option value="">TP. Đà Nẵng</option>
+                        <option value="">Nghệ An</option>
+                    </select><br>
+                    <em>Chọn tỉnh đi bạn nhé</em>
+                </div>
+                <div>
+                    <button onclick="hoten1()">Thanh toán</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
