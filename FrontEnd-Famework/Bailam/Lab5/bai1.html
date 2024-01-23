@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/angular.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 
@@ -14,17 +14,14 @@
 
 
     <div class="container-fluid row" ng-controller="myctrl">
-        <div class="card text-center col-2 my-5 mx-5" >
+        <div class="card text-center col-2 my-5 mx-5" ng-repeat="sanpham in sanpham">
             <div class="card-header text-xl">{{sanpham.name}}</div>
             <div class="card-body">
                 <img src="img/{{sanpham.img}}" class="img-thumbnail" alt="">
-                <p class="d-flex justify-start">Đơn giá: <b>199.000đ</b></p>
-                <p for="" class="d-flex justify-start">Số lượng: </p>
-                <input type="number" min="0" max="99" class="form-control" ng-model="soluong">
-                
             </div>
-            <button type="button" ng-click='thanhtien()'>Tính tiền</button>
-            <div class="card-footer d-flex justify-start" >Thành tiền: <b ng-bind="total"></b> </div>
+            <div class="card-footer">
+                <p class="">Đơn giá: <b>199.000đ</b></p>
+            </div>
         </div>
 
     </div>
@@ -35,21 +32,120 @@
         function myfunc($scope) {
 
             $scope.sanpham =
+                    [
                     {
-                        img: "1.jpg",
-                        name: "Pack 3 Quần Short Nam",
-                        title: "Thoáng mát / Mix màu",
-                        price: "199.000"
-                    };
+                        "img": "1.jpg",
+                        "name": "Pack 3 Quần Short Nam kẻ sọc Basics",
+                        "title": "Thoáng mát / Mix màu",
+                        "price": "199.000đ"
+                    },
+                    {
+                        "img": "2.jpg",
+                        "name": "Áo Nỉ chui đầu Lifewear",
+                        "title": "Giữ ấm / Xám sáng",
+                        "price": "249.000đ"
+                    },
+                    {
+                        "img": "3.jpg",
+                        "name": "Quần Shorts Nam Gym 5' Essentials",
+                        "title": "Co giãn / Đen",
+                        "price": "199.000đ"
+                    },
+                    {
+                        "img": "4.jpg",
+                        "name": "Áo Sweatshirt Thể Thao Active",
+                        "title": "Vải Cotton / 360GSM / Nâu",
+                        "price": "329.000đ"
+                    },
+                    {
+                        "img": "5.jpg",
+                        "name": "Áo dài tay Cotton Compact V2",
+                        "title": "Thoáng mát / Đen",
+                        "price": "199.000đ"
+                    },
+                    {
+                        "img": "6.jpg",
+                        "name": "Áo Nỉ chui đầu Essentials",
+                        "title": "Cotton 360GSM / Đen",
+                        "price": "299.000đ"
+                    },
+                    {
+                        "img": "7.jpg",
+                        "name": "Áo Khoác Nam chạy bộ Fast & Free",
+                        "title": "Siêu nhẹ / Đen",
+                        "price": "499.000đ"
+                    },
+                    {
+                        "img": "8.jpg",
+                        "name": "Combo 3 Trunk Bamboo",
+                        "title": "Kháng khuẩn / Xanh Navy",
+                        "price": "219.000đ"
+                    },
+                    {
+                        "img": "9.jpg",
+                        "name": "Quần Shorts Nam Daily Short",
+                        "title": "Sợi Sorona / Xám xanh",
+                        "price": "199.000đ"
+                    },
+                    {
+                        "img": "10.jpg",
+                        "name": "Quần dài Daily Pants",
+                        "title": "Excool / Đen",
+                        "price": "269.000đ"
+                    },
+                    {
+                        "img": "11.jpg",
+                        "name": "Quần Dài Nam Kaki Excool",
+                        "title": "Slim fit",
+                        "price": "439.000đ"
+                    },
+                    {
+                        "img": "12.jpg",
+                        "name": "Quần Jeans Nam Copper Denim Straight",
+                        "title": "Thoải mái / Xanh Garment",
+                        "price": "529.000đ"
+                    },
+                    {
+                        "img": "13.jpg",
+                        "name": "Áo Thể Thao dài tay Active V2",
+                        "title": "Thoáng khí / Xanh ngọc",
+                        "price": "159.000đ"
+                    },
+                    {
+                        "img": "14.jpg",
+                        "name": "Quần Jogger Nam UT đa năng",
+                        "title": "Co giãn / Đen",
+                        "price": "429.000đ"
+                    },
+                    {
+                        "img": "15.jpg",
+                        "name": "Quần Jogger Nam Excool",
+                        "title": "Co giãn / Xanh Navy",
+                        "price": "279.000đ"
+                    },
+                    {
+                        "img": "16.jpg",
+                        "name": "Quần Nỉ Jogger Essentials",
+                        "title": "Cotton 360GSM / Xanh Navy",
+                        "price": "329.000đ"
+                    },
+                    {
+                        "img": "17.jpg",
+                        "name": "Quần Dài Nam Thể Thao Pro Active",
+                        "title": "Chống nhăn / Xám phối đen",
+                        "price": "329.000đ"
+                    },
+                    {
+                        "img": "18.jpg",
+                        "name": "Quần Jeans Nam Basics dáng Straight",
+                        "title": "Co giãn / Xanh đậm",
+                        "price": "459.000đ"
+                    },
+                    ];
                     
                 
             
-            $scope.thanhtien = function(){
-                var a = parseInt($scope.soluong);
-                var b = parseInt($scope.price);
-                $scope.total = a * 199000; 
-
-            };
+            
 
 
 

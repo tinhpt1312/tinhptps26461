@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/angular.min.js"></script>
+
+</head>
+
+<body ng-app="myapp">
+    <div class="container" ng-controller="myctrl">
+        <header class="">
+            <ul class="nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
+                </li>
+                <li class="nav-item" ng-repeat="tl in listtheloai | filter:{lang:'vi', AnHien:'1'}">
+                  <a class="nav-link" href="#">{{tl.TenTL}}</a>
+                </li>
+              </ul>
+        </header>
+
+        <main class="bg-light row" style="height: 300px;">
+            <article class="col-9"></article>
+
+            <aside class="col-3 bg-primary"></aside>
+        </main>
+
+
+        <footer class="bg-danger" style="height: 80px;">
+            
+        </footer>
+
+    </div>
+
+
+    <script src="js/theloai.js"></script>
+    <script>
+        var app = angular.module("myapp", []);
+        app.controller("myctrl", myfunc);
+        function myfunc($scope) {
+            $scope.listtheloai = theloai;
+        }
+    </script>
+</body>
+
+</html>

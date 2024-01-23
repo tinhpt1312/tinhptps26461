@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body ng-app="myapp">
+
+
+    <div class="container" ng-controller="myctrl">
+        <div class="card text-center" >
+            <table class="table" >
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Năm sinh</th>
+                    <th scope="col">Ảnh</th>
+                  </tr>
+                </thead>
+                <tbody ng-repeat="sv in listsv">
+                  <tr>
+                    <th scope="row">{{sv.id}}</th>
+                    <td>{{sv.Name}}</td>
+                    <td>{{sv.Sinh}}</td>
+                    <td><img src="img/{{sv.img}}" width="100px"></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+
+    </div>
+
+    <script>
+        var app = angular.module("myapp", []);
+        app.controller("myctrl", myfunc);
+        function myfunc($scope) {
+
+            $scope.listsv = [
+                {
+                    "id":"1",
+                    "img":"1.jpg",
+                    "Name":"Phạm Thế Tình",
+                    "Sinh":"2003"
+                },
+                {
+                    "id":"2",
+                    "img":"2.jpg",
+                    "Name":"Phạm Ngũ Lão",
+                    "Sinh":"2000"
+                },
+                {
+                    "id":"3",
+                    "img":"3.jpg",
+                    "Name":"Phạm Minh Đức",
+                    "Sinh":"2008"
+                },
+                {
+                    "id":"4",
+                    "img":"4.jpg",
+                    "Name":"Phạm Văn Mạnh",
+                    "Sinh":"2010"
+                },
+                
+
+            ];
+                    
+                
+        }
+        
+    </script>
+</body>
+
+</html>
