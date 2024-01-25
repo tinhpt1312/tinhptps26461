@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+</head>
+
+<body ng-app="myapp">
+    <a href="#!red">Red</a>
+    <a href="#!green">Green</a>
+    <a href="#">Blue</a>
+
+    <div ng-view></div>
+</body>
+
+</html>
+
+<script>
+    var app = angular.module("myapp", ["ngRoute"]);
+    app.config(function ($routeProvider) {
+        $routeProvider
+            .when("/red", {
+                templateUrl: "red.html",
+                controller:"myctr1"
+            })
+            .when("/green", {
+                templateUrl: "green.html",
+                controller:"myctr2"
+            })
+            .otherwise({
+                templateUrl: "blue.html"
+            });
+    });
+
+    app.controller("myctr1", function($scope){
+        $scope.thongbao = "Im Red"
+    })
+</script>

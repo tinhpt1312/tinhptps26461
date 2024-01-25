@@ -14,25 +14,18 @@
 
 
     <div class="container" ng-controller="myctrl">
-        <div class="card text-center" >
-            <table class="table" >
-                <thead>
-                  <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Năm sinh</th>
-                    <th scope="col">Ảnh</th>
-                  </tr>
-                </thead>
-                <tbody ng-repeat="sv in listsv">
-                  <tr>
-                    <th scope="row">{{sv.id}}</th>
-                    <td>{{sv.Name}}</td>
-                    <td>{{sv.Sinh}}</td>
-                    <td><img src="img/{{sv.img}}" width="100px"></td>
-                  </tr>
-                </tbody>
-              </table>
+        <div class="card text-center">
+            <div class="card-header">
+                <h1>Danh mục sản phẩm</h1>
+            </div>
+            <div class="card-body">
+                <ol>
+                    <li ng-repeat="dm in danhmucs">{{dm}}
+                    <button ng-click="delete()">Xóa</button></li>
+                    <li><input type="text" ng-model="danhmuc"><button
+                            ng-click="insert()">Thêm</button></li>
+                </ol>
+            </div>
         </div>
 
     </div>
@@ -41,39 +34,23 @@
         var app = angular.module("myapp", []);
         app.controller("myctrl", myfunc);
         function myfunc($scope) {
+            $scope.danhmucs = [
+                "Di động",
+                "Phụ kiện",
+            ]
 
-            $scope.listsv = [
-                {
-                    "id":"1",
-                    "img":"1.jpg",
-                    "Name":"Phạm Thế Tình",
-                    "Sinh":"2003"
-                },
-                {
-                    "id":"2",
-                    "img":"2.jpg",
-                    "Name":"Phạm Ngũ Lão",
-                    "Sinh":"2000"
-                },
-                {
-                    "id":"3",
-                    "img":"3.jpg",
-                    "Name":"Phạm Minh Đức",
-                    "Sinh":"2008"
-                },
-                {
-                    "id":"4",
-                    "img":"4.jpg",
-                    "Name":"Phạm Văn Mạnh",
-                    "Sinh":"2010"
-                },
-                
+            $scope.danhmuc = {};
+            $scope.inedx = -1;
 
-            ];
-                    
-                
+            $scope.insert = function () {
+                $scope.danhmucs.push(angular.copy($scope.danhmuc));
+            }
+
+            $scope.delete = function(){
+                $scope.danhmucs.splice($scope.inedx, 1);
+            }
         }
-        
+
     </script>
 </body>
 
