@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body ng-app="lab8">
+    <div class="container"  ng-controller="lab8">
+        <header></header>
+        <nav style="height: 60px;" class="bg-warning">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#!lienhe">Liên hệ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#!gioithieu">Giới thiệu</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link text-dark dropdown-toggle" data-bs-toggle="dropdown" href="#">Tài khoản</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Đăng nhập</a></li>
+                        <li><a class="dropdown-item" href="#">Đăng kí</a></li>
+                        <li><a class="dropdown-item" href="#">Quên mật khẩu</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="d-flex" style="min-height: 300px;">
+            <article class="col-9" ng-view>
+            </article>
+
+            <aside class="col-3">
+                <div class="card">
+                    <div class="card-header">
+                      Các môn học
+                    </div>
+                    <div class="listmonhoc" ng-include="'cacmonhoc.html'"></div>
+                  </div>
+            </aside>
+        </div>
+        <footer>
+            <div class="text-center bg-dark text-white">
+                <p>Mã SV - Họ Tên <br>Email: email@CủaSV</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
+
+<script>
+    var app = angular.module("lab8", ["ngRoute"]);
+    app.controller("lab8", function($scope, $http){
+        $scope.cacmonhoc = [];
+
+        $http.get("monhoc.js").then(function(d){
+            $scope.cacmonhoc = d.data;
+        });
+    })
+
+    app.config(function($routeProvider){
+        $routeProvider
+        .when("/lienhe", {
+            templateUrl: "lienhe.html"
+        })
+        .when("/gioithieu",{
+            templateUrl: "gioithieu.html"
+        })
+        .otherwise({
+            template: "<h5> Chào bạn </h5>"
+        })
+    });
+</script>

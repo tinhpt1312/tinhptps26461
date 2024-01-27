@@ -1,0 +1,164 @@
+[
+  {
+    "id": 1,
+    "img": "1.jpg",
+    "name": "Pack 3 Quần Short Nam kẻ sọc Basics",
+    "title": "Thoáng mát / Mix màu",
+    "price": "199.000đ",
+    "size": "L",
+    "class": "Quần"
+  },
+  {
+    "id": 2,
+    "img": "2.jpg",
+    "name": "Áo Nỉ chui đầu Lifewear",
+    "title": "Giữ ấm / Xám sáng",
+    "price": "249.000đ",
+    "size": "XL",
+    "class": "Áo"
+  },
+  {
+    "id": 3,
+    "img": "3.jpg",
+    "name": "Quần Shorts Nam Gym 5' Essentials",
+    "title": "Co giãn / Đen",
+    "price": "199.000đ",
+    "size": "M",
+    "class": "Quần"
+  },
+  {
+    "id": 4,
+    "img": "4.jpg",
+    "name": "Áo Sweatshirt Thể Thao Active",
+    "title": "Vải Cotton / 360GSM / Nâu",
+    "price": "329.000đ",
+    "size": "XL",
+    "class": "Áo"
+  },
+  {
+    "id": 5,
+    "img": "5.jpg",
+    "name": "Áo dài tay Cotton Compact V2",
+    "title": "Thoáng mát / Đen",
+    "price": "199.000đ",
+    "size": "L",
+    "class": "Áo"
+  },
+  {
+    "id": 6,
+    "img": "6.jpg",
+    "name": "Áo Nỉ chui đầu Essentials",
+    "title": "Cotton 360GSM / Đen",
+    "price": "299.000đ",
+    "size": "XL",
+    "class": "Áo"
+  },
+  {
+    "id": 7,
+    "img": "7.jpg",
+    "name": "Áo Khoác Nam chạy bộ Fast & Free",
+    "title": "Siêu nhẹ / Đen",
+    "price": "499.000đ",
+    "size": "M",
+    "class": "Áo"
+  },
+  {
+    "id": 8,
+    "img": "8.jpg",
+    "name": "Combo 3 Trunk Bamboo",
+    "title": "Kháng khuẩn / Xanh Navy",
+    "price": "219.000đ",
+    "size": "XL",
+    "class": "Quần lót"
+  },
+  {
+    "id": 9,
+    "img": "9.jpg",
+    "name": "Quần Shorts Nam Daily Short",
+    "title": "Sợi Sorona / Xám xanh",
+    "price": "199.000đ",
+    "size": "XL",
+    "class": "Quần"
+  },
+  {
+    "id": 10,
+    "img": "10.jpg",
+    "name": "Quần dài Daily Pants",
+    "title": "Excool / Đen",
+    "price": "269.000đ",
+    "size": "XL",
+    "class": "Quần"
+  },
+  {
+    "id": 11,
+    "img": "11.jpg",
+    "name": "Quần Dài Nam Kaki Excool",
+    "title": "Slim fit",
+    "price": "439.000đ",
+    "size": "M",
+    "class": "Quần"
+  },
+  {
+    "id": 12,
+    "img": "12.jpg",
+    "name": "Quần Jeans Nam Copper Denim Straight",
+    "title": "Thoải mái / Xanh Garment",
+    "price": "529.000đ",
+    "size": "M",
+    "class": "Quần"
+  },
+  {
+    "id": 13,
+    "img": "13.jpg",
+    "name": "Áo Thể Thao dài tay Active V2",
+    "title": "Thoáng khí / Xanh ngọc",
+    "price": "159.000đ",
+    "size": "M",
+    "class": "Áo"
+  },
+  {
+    "id": 14,
+    "img": "14.jpg",
+    "name": "Quần Jogger Nam UT đa năng",
+    "title": "Co giãn / Đen",
+    "price": "429.000đ",
+    "size": "L",
+    "class": "Quần"
+  },
+  {
+    "id": 15,
+    "img": "15.jpg",
+    "name": "Quần Jogger Nam Excool",
+    "title": "Co giãn / Xanh Navy",
+    "price": "279.000đ",
+    "size": "L",
+    "class": "Quần"
+  },
+  {
+    "id": 16,
+    "img": "16.jpg",
+    "name": "Quần Nỉ Jogger Essentials",
+    "title": "Cotton 360GSM / Xanh Navy",
+    "price": "329.000đ",
+    "size": "L",
+    "class": "Quần"
+  },
+  {
+    "id": 17,
+    "img": "17.jpg",
+    "name": "Quần Dài Nam Thể Thao Pro Active",
+    "title": "Chống nhăn / Xám phối đen",
+    "price": "329.000đ",
+    "size": "L",
+    "class": "Quần"
+  },
+  {
+    "id": 18,
+    "img": "18.jpg",
+    "name": "Quần Jeans Nam Basics dáng Straight",
+    "title": "Co giãn / Xanh đậm",
+    "price": "459.000đ",
+    "size": "XL",
+    "class": "Quần"
+  }
+]

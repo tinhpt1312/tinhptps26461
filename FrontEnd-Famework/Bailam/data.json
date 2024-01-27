@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "price": 15000,
+    "name": "Táo"
+  },
+  {
+    "id": 2,
+    "price": 90000,
+    "name": "Đào"
+  },
+  {
+    "id": 3,
+    "price": 50000,
+    "name": "Nho"
+  },
+  {
+    "id": 4,
+    "price": 9000,
+    "name": "Ổi"
+  },
+  {
+    "id": 5,
+    "price": 56000,
+    "name": "Chôm Chôm"
+  },
+  {
+    "id": 6,
+    "price": 7000,
+    "name": "Ngang"
+  },
+  {
+    "id": 7,
+    "price": 5000,
+    "name": "Cherry"
+  },
+  {
+    "id": 8,
+    "price": 9000,
+    "name": "Roi"
+  },
+  {
+    "id": 9,
+    "price": 7000,
+    "name": "Mơ"
+  },
+  {
+    "id": 10,
+    "price": 12000,
+    "name": "Lê Ki Ma"
+  },
+  {
+    "id": 11,
+    "price": 5500,
+    "name": "Cà Na"
+  },
+  {
+    "id": 12,
+    "price": 3000,
+    "name": "Xoài"
+  },
+  {
+    "id": 13,
+    "price": 5000,
+    "name": "Mít"
+  }
+]

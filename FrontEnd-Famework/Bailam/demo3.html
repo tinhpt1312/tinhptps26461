@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="productApp">
+
+<head>
+    <title>Simple Order Detail Page</title>
+    <style>
+        /* Add your custom CSS styles here */
+    </style>
+</head>
+
+<body>
+    <div ng-controller="productListController">
+        <h1>Product List</h1>
+        <ul>
+            <li ng-repeat="product in products" ng-click="selectProduct(product)">
+                {{ product.name }} - ${{ product.price }}
+            </li>
+        </ul>
+        <product-detail product="selectedProduct"></product-detail>
+    </div>
+
+    <script src="https://code.angularjs.org/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
+

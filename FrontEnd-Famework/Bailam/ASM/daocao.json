@@ -1,0 +1,86 @@
+[
+    {
+        "img": "1.jpg",
+        "name": "DISCOVERY Perfume Set by CM24",
+        "title": "Set 5 chai nước Hoa 2ml",
+        "price": "149.000đ"
+    },
+    {
+        "img": "2.jpg",
+        "name": "Bộ Cạo Râu Nam - Shaving Kit CM24",
+        "title": "GKem cạo râu / Lưỡi cạo / Tay cầm",
+        "price": "199.000đ"
+    },
+    {
+        "img": "3.jpg",
+        "name": "Nước Hoa Nam CM24 ICONIC COOL EDP - 50ml",
+        "title": "Hương tươi mát",
+        "price": "519.000đ"
+    },
+    {
+        "img": "4.jpg",
+        "name": "Bộ Chăm Sóc Cơ Thể Nam Grooming Kit CM24",
+        "title": "Sữa tắm / Lăn khử mùi / Kem rửa mặt",
+        "price": "219.000đ"
+    },
+    {
+        "img": "5.jpg",
+        "name": "Nước Hoa Nam CM24 ICONIC WARM EDP - 50ml",
+        "title": "Hương nồng ấm",
+        "price": "519.000đ"
+    },
+    {
+        "img": "6.jpg",
+        "name": "Sữa Tắm Gội 2in1 CM24 500ml",
+        "title": "Hương nước Hoa",
+        "price": "179.000đ"
+    },
+    {
+        "img": "7.jpg",
+        "name": "Combo REFINED 2 Nước hoa CM24",
+        "title": "Special Day & Iconic Warm",
+        "price": "229.000đ"
+    },
+    {
+        "img": "8.jpg",
+        "name": "Set Cạo Râu Nam CM24",
+        "title": "5 Lưỡi +1 / Tay cầm",
+        "price": "89.000đ"
+    },
+    {
+        "img": "9.jpg",
+        "name": "Kem Cạo Râu Có Dưỡng Ẩm CM24",
+        "title": "100ml",
+        "price": "69.000đ"
+    },
+    {
+        "img": "10.jpg",
+        "name": "Bộ 2 Lưỡi dao cạo râu CM24 5 Lưỡi +1",
+        "title": "Sắc bén",
+        "price": "69.000đ"
+    },
+    {
+        "img": "11.jpg",
+        "name": "Bộ 2 Lưỡi dao cạo râu CM24 3 Lưỡi",
+        "title": "Sắc bén",
+        "price": "39.000đ"
+    },
+    {
+        "img": "12.jpg",
+        "name": "Combo Nước Hoa & Sữa tắm gội CM24",
+        "title": "Sạch thơm / Nam tính / ICONIC COOL",
+        "price": "179.000đ"
+    },
+    {
+        "img": "13.jpg",
+        "name": "Combo Nước Hoa & Lăn Khử Mùi CM24",
+        "title": "Hương nam tính / ICONIC COOL",
+        "price": "179.000đ"
+    },
+    {
+        "img": "14.jpg",
+        "name": "Lăn Khử Mùi Nam CM24 50g",
+        "title": "Hương nước Hoa",
+        "price": "79.000đ"
+    }
+]

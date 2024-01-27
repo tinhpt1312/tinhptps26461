@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
 </head>
 
 <body ng-app="myapp">
@@ -422,196 +423,8 @@
                     </div>
                 </div>
         </nav>
-
-        <header>
-            <div id="demo" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-                    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-                    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="img/BANNER_WINTER_CLT_(ccmaNdbnn)s.png" alt="Los Angeles" class="d-block"
-                            style="width:100%">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="img/BANNER_WINTER_CLT_(ccmfnlfnal)s.png" alt="Chicago" class="d-block"
-                            style="width:100%">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="img/cmbsBanner-6_copy.jpg" alt="New York" class="d-block" style="width:100%">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </button>
-            </div>
-        </header>
-
         <article>
-            <div class="mb-16">
-                <h1 class="text-3xl font-bold mt-24 ml-10 mb-3">TẤT CẢ SẢN PHẨM</h1>
-                <div>
-                    <button class="btn bg-gray-400 text-white hover:bg-black w-32 h-12 text-sm rounded-full ml-10"
-                        type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
-                        <i class="bi bi-list mr-2"></i>Hiện bộ lọc
-                    </button>
-                    <button class="btn bg-red-600 text-white hover:bg-black w-32 h-12 text-sm rounded-full ml-3">
-                        Bán chạy
-                    </button>
-                    <button class="btn bg-gray-400 text-white hover:bg-black w-32 h-12 text-sm rounded-full ml-3">
-                        Áo
-                    </button>
-                    <button class="btn bg-gray-400 text-white hover:bg-black w-32 h-12 text-sm rounded-full ml-3">
-                        Quần
-                    </button>
-                    <button class="btn bg-gray-400 text-white hover:bg-black w-32 h-12 text-sm rounded-full ml-3">
-                        Quần lót
-                    </button>
-                    <button class="btn bg-gray-400 text-white hover:bg-black w-32 h-12 text-sm rounded-full ml-3">
-                        Phụ kiện
-                    </button>
-                    <button class="btn bg-gray-400 text-white hover:bg-black w-32 h-12 text-sm rounded-full ml-3">
-                        CM24
-                    </button>
-                </div>
-            </div>
-            <div class="row align-items-center justify-end mr-10 mb-12">
-                <p class="text-gray-500 font-light col-1 flex-shrink-0">PHÂN LOẠI</p>
-                <select class="form-select w-52 rounded-full col-3 flex-grow-0">
-                    <option>Mới nhất</option>
-                    <option>Bán chạy</option>
-                    <option>Giá thấp đến cao</option>
-                    <option>Giá cao đến thấp</option>
-                </select>
-            </div>
-            <div class="container-fluid mb-5" ng-controller="myctrl">
-                <div class="p-2 grid grid-cols-5 gap-4 max-w-full md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
-                    data-bs-toggle="modal" data-bs-target="#myModal3">
-                    <div class="shadow-lg" ng-repeat="sp in sanpham">
-                        <div>
-                            <img src="img/SapPham/{{sp.img}}">
-                        </div>
-                        <div class="mt-3 ml-5">
-                            <ul>
-                                <a href="" class="btn btn-dark w-10 h-4"></a>
-                                <a href="" class="btn bg-green-600 border-black hover:bg-green-800 w-10 h-4"></a>
-                            </ul>
-                            <h3 class="text-black font-light my-1 text-sm">{{sp.name}}</h3>
-                            <span class="block text-gray-600 text-xs mt-2">{{sp.title}}</span>
-                            <h4 class="font-medium text-black mb-8 mt-2">{{sp.price}}</h4>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="modal container " id="myModal3" ng-controller="myctrl">
-                <div class="modal-dialog">
-                    <div class="modal-content grid md:grid-cols-2 grid-cols-1" style="width: 1000px;">
-                        <div class="modal-body">
-                            <a href="">
-                                <img src="img/SapPham/1.jpg" alt="">
-                            </a>
-
-                        </div>
-                        <div class="modal-body mt-3 pl-10 pt-2">
-                            <h1 class="font-bold text-3xl">Pack 3 Quần Short Nam kẻ sọc Basics</h1>
-                            <span class="block text-gray-600 text-lg mt-2">Thoáng mát / Mix màu</span>
-
-                            <div class="row mt-2">
-                                <div class="border-dark border-end col-4 text-xl">
-                                    <a href=""><i class="bi bi-star"></i></a>
-                                    <a href=""><i class="bi bi-star"></i></a>
-                                    <a href=""><i class="bi bi-star"></i></a>
-                                    <a href=""><i class="bi bi-star"></i></a>
-                                    <a href=""><i class="bi bi-star"></i></a>
-                                </div>
-                                <div class="col-8 d-flex justify-center flex-col">
-                                    <p class="text-black text-sm ">Đã bán: 50 (web)</p>
-                                </div>
-                            </div>
-                            <h1 class="mt-3 text-black text-3xl mb-4">199.000đ</h1>
-                            <h1 class="mb-2">Màu sắc: <strong>Mix màu</strong></h1>
-                            <button class="btn btn-dark w-14 h-6 rounded-full"></button>
-                            <div class="d-flex justify-between mt-3 mb-3">
-                                <h1 class="mt-1 text-center">Kích thước: </h1>
-                                <a href="" class="text-blue-600"><u>Hướng dẫn chọn size</u></a>
-                            </div>
-                            <div class="mb-3">
-                                <div class="grid grid-cols-5 gap-x-2">
-                                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-full w-16"
-                                        type="button">S</button>
-                                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-full w-16"
-                                        type="button">M</button>
-                                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-full w-16"
-                                        type="button">L</button>
-                                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-full w-16"
-                                        type="button">XL</button>
-                                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-full w-16"
-                                        type="button">2XL</button>
-                                </div>
-                            </div>
-                            <div class="row mb-6">
-                                <div class="col-1"></div>
-                                <input type="number" value="1" min="0" max="100" step="1"
-                                    class="border border-dark rounded-full px-3 text-center h-10 col-2">
-                                <div class="col-1"></div>
-                                <button type="button" class="btn btn-dark rounded-full px-5 col-7 "><i
-                                        class="bi bi-bag-heart mr-2"></i>Thêm vào giỏ hàng</button>
-                                <div class="col-1"></div>
-                            </div>
-                            <hr>
-                            <div class="grid grid-cols-3 gap-4 mt-6 mb-6">
-                                <div class="d-flex align-items-center flex-col text-center">
-                                    <img src="img/icon6.svg" alt="" class="mb-2">
-                                    <label for="" class="text-xs">Đổi trả cực dễ chỉ cần số điện thoại</label>
-                                </div>
-                                <div class="d-flex align-items-center flex-col text-center">
-                                    <img src="img/icon4.svg" alt="" class="mb-2">
-                                    <label for="" class="text-xs">Miễn phí vận chuyển cho đơn hàng trên 200k</label>
-                                </div>
-                                <div class="d-flex align-items-center flex-col text-center">
-                                    <img src="img/icon5.svg" alt="" class="mb-2">
-                                    <label for="" class="text-xs">60 ngày đổi trả vì bất kì lý do gì</label>
-                                </div>
-                                <div class="d-flex align-items-center flex-col text-center">
-                                    <img src="img/icon2.svg" alt="" class="mb-2">
-                                    <label for="" class="text-xs">Hotline 0339444203 hỗ trợ từ 8h30 - 22h mỗi
-                                        ngày</label>
-                                </div>
-                                <div class="d-flex align-items-center flex-col text-center">
-                                    <img src="img/icon1.svg" alt="" class="mb-2">
-                                    <label for="" class="text-xs">Đến tận nơi nhận hàng trả, hoàn tiền trong 24h</label>
-                                </div>
-                                <div class="d-flex align-items-center flex-col text-center">
-                                    <img src="img/icon3.svg" alt="" class="mb-2">
-                                    <label for="" class="text-xs">Giao hàng nhanh toàn quốc</label>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Đóng</button>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-
-
-            <hr class="mb-10 mx-2">
-
-            <div class="text-center mb-20">
-                <button class="btn btn-dark rounded-full w-44 h-12">Xem thêm</button>
-                <p class="text-sm text-gray-400 font-light mt-3">Hiển thị 1 - 16 trên tổng số 177 sản phẩm</p>
-            </div>
+            <div class="ng-view"></div>
 
             <div class="mb-24 px-2">
                 <div class="grid grid-cols-2 gap-4 mt-8 lg:grid-cols-4">
@@ -808,126 +621,35 @@
 
 
     <script>
-        var app = angular.module("myapp", []);
-        app.controller("myctrl", myfunc);
-        function myfunc($scope) {
+        var app = angular.module("myapp", ["ngRoute"]);
+        app.controller("myctrl", function ($scope, $http) {
+            $scope.sanpham = [];
+            $http.get("clothes.json").then(function (sanphams) {
+                $scope.sanpham = sanphams.data;
+            });
+        })
 
-            $scope.sanpham =
-                [
-                    {
-                        "img": "1.jpg",
-                        "name": "Pack 3 Quần Short Nam kẻ sọc Basics",
-                        "title": "Thoáng mát / Mix màu",
-                        "price": "199.000đ"
-                    },
-                    {
-                        "img": "2.jpg",
-                        "name": "Áo Nỉ chui đầu Lifewear",
-                        "title": "Giữ ấm / Xám sáng",
-                        "price": "249.000đ"
-                    },
-                    {
-                        "img": "3.jpg",
-                        "name": "Quần Shorts Nam Gym 5' Essentials",
-                        "title": "Co giãn / Đen",
-                        "price": "199.000đ"
-                    },
-                    {
-                        "img": "4.jpg",
-                        "name": "Áo Sweatshirt Thể Thao Active",
-                        "title": "Vải Cotton / 360GSM / Nâu",
-                        "price": "329.000đ"
-                    },
-                    {
-                        "img": "5.jpg",
-                        "name": "Áo dài tay Cotton Compact V2",
-                        "title": "Thoáng mát / Đen",
-                        "price": "199.000đ"
-                    },
-                    {
-                        "img": "6.jpg",
-                        "name": "Áo Nỉ chui đầu Essentials",
-                        "title": "Cotton 360GSM / Đen",
-                        "price": "299.000đ"
-                    },
-                    {
-                        "img": "7.jpg",
-                        "name": "Áo Khoác Nam chạy bộ Fast & Free",
-                        "title": "Siêu nhẹ / Đen",
-                        "price": "499.000đ"
-                    },
-                    {
-                        "img": "8.jpg",
-                        "name": "Combo 3 Trunk Bamboo",
-                        "title": "Kháng khuẩn / Xanh Navy",
-                        "price": "219.000đ"
-                    },
-                    {
-                        "img": "9.jpg",
-                        "name": "Quần Shorts Nam Daily Short",
-                        "title": "Sợi Sorona / Xám xanh",
-                        "price": "199.000đ"
-                    },
-                    {
-                        "img": "10.jpg",
-                        "name": "Quần dài Daily Pants",
-                        "title": "Excool / Đen",
-                        "price": "269.000đ"
-                    },
-                    {
-                        "img": "11.jpg",
-                        "name": "Quần Dài Nam Kaki Excool",
-                        "title": "Slim fit",
-                        "price": "439.000đ"
-                    },
-                    {
-                        "img": "12.jpg",
-                        "name": "Quần Jeans Nam Copper Denim Straight",
-                        "title": "Thoải mái / Xanh Garment",
-                        "price": "529.000đ"
-                    },
-                    {
-                        "img": "13.jpg",
-                        "name": "Áo Thể Thao dài tay Active V2",
-                        "title": "Thoáng khí / Xanh ngọc",
-                        "price": "159.000đ"
-                    },
-                    {
-                        "img": "14.jpg",
-                        "name": "Quần Jogger Nam UT đa năng",
-                        "title": "Co giãn / Đen",
-                        "price": "429.000đ"
-                    },
-                    {
-                        "img": "15.jpg",
-                        "name": "Quần Jogger Nam Excool",
-                        "title": "Co giãn / Xanh Navy",
-                        "price": "279.000đ"
-                    },
-                    {
-                        "img": "16.jpg",
-                        "name": "Quần Nỉ Jogger Essentials",
-                        "title": "Cotton 360GSM / Xanh Navy",
-                        "price": "329.000đ"
-                    },
-                    {
-                        "img": "17.jpg",
-                        "name": "Quần Dài Nam Thể Thao Pro Active",
-                        "title": "Chống nhăn / Xám phối đen",
-                        "price": "329.000đ"
-                    },
-                    {
-                        "img": "18.jpg",
-                        "name": "Quần Jeans Nam Basics dáng Straight",
-                        "title": "Co giãn / Xanh đậm",
-                        "price": "459.000đ"
-                    },
-                ];
+        app.config(function ($routeProvider) {
+            $routeProvider
+                .when("/:idsp", {
+                    templateUrl: "productdetail.html",
+                    controller: "myctr1"
+                })
+                .otherwise({
+                    templateUrl: "product.html"
+                })
 
+        });
 
+        app.controller("myctr1", function ($scope, $routeParams) {
+            $scope.idsp = $routeParams.idsp;
 
+            var matchingProduct = $scope.sanpham.find(function (product) {
+                return product.id === parseInt($scope.idsp);
+            });
 
-        }
+            $scope.matchingProduct = matchingProduct;
+        });
     </script>
 </body>
 

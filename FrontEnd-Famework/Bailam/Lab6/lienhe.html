@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/angular.min.js"></script>
+
+</head>
+
+<body ng-app="myapp">
+
+    <div class="container">
+        <div ng-controller="myctrl1">
+            <form action="" class="border border-primary">
+                <h5 class="text-white p-2 bg-primary">Form nhập thông tin sinh viên</h5>
+                <div class="mb-3 mx-3">
+                    Họ tên sinh viên
+                    <input type="text" placeholder="Họ tên đầy đủ" class="form-control border border-secondary"
+                        ng-model="student.fullname" ng-bind="student.fullname">
+                </div>
+                <div class="mb-3 mx-3">Ngày sinh
+                    <input type="text" placeholder="yyyy-MM-dd" class="form-control border border-secondary shadow-none"
+                        ng-model="student.birthday" ng-bind="student.birthday">
+                </div>
+                <div class="mb-3 mx-3">
+                    Điểm
+                    <input type="number" placeholder="0.0 đến 10.0" min="0" max="10"
+                        class="form-control border border-secondary shadow-none" ng-model="student.mark"
+                        ng-bind="student.mark">
+                </div>
+                <div class="mx-3 mb-3 d-flex justify-content-between">
+                    <button class="btn btn-primary" ng-click="insert()" ng-show="index == -1">Thêm</button>
+                    <button class="btn btn-warning" ng-click="update()" ng-show="index != -1">Cập nhật</button>
+                    <button class="btn btn-danger" ng-click="delete()" ng-show="index != -1">Xóa</button>
+                    <button class="btn btn-dark" ng-click="cancel()">Bỏ qua</button>
+                    <button class="btn btn-success" ng-click="clear()">Làm mới</button>
+                </div>
+            </form>
+
+        </div>
+
+        <div ng-controller="myctrl2">
+            <table class="table table-bordered text-center">
+                <tr>
+                    <th class="bg-warning">Họ tên</th>
+                    <th class="bg-warning">Ngày sinh</th>
+                    <th class="bg-warning">Điểm</th>
+                    <th class="bg-warning">Học lực</th>
+                    <th class="bg-warning">Chọn</th>
+                </tr>
+                <tr ng-repeat="sv in students">
+                    <td>{{sv.fullname | uppercase}}</td>
+                    <td>{{sv.birthday | date:"dd/MM/yyyy"}}</td>
+                    <td>{{sv.mark}}</td>
+                    <td>
+                        <span ng-if="sv.mark >= 8">Giỏi / Xuất sắc</span>
+                        <span ng-if="sv.mark >= 5 && sv.mark < 8">Trung bình / Khá</span>
+                        <span ng-if="sv.mark < 5">Yếu Kém</span>
+                    </td>
+                    <td><a href="#" ng-click="edit($index)" class="btn btn-primary py-1">Chỉnh</a></td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+
+
+    <script>
+        var app = angular.module("myapp", []);
+        app.controller("myctrl1", function ($scope) {
+            $scope.$parent.students = [
+                {
+                    fullname: "Phạm Thế Tình",
+                    birthday: "2003-12-13",
+                    mark: 10.0
+                },
+                {
+                    fullname: "Đào Được Vàng",
+                    birthday: "2005-03-24",
+                    mark: 7.5
+                },
+                {
+                    fullname: "Lâm Vân Vân",
+                    birthday: "2003-05-05",
+                    mark: 9
+                },
+                {
+                    fullname: "Mai Anh Tới",
+                    birthday: "2004-09-10",
+                    mark: 8
+                },
+
+            ]
+            $scope.$parent.student = {};
+            $scope.$parent.index = -1;
+
+            $scope.update = function () {
+                i = $scope.$parent.index;
+                $scope.$parent.students[i] = angular.copy($scope.$parent.student)
+                $scope.clear();
+            }
+
+            $scope.clear = function () {
+                $scope.$parent.student = {}
+                $scope.$parent.index = -1;
+            }
+
+            $scope.insert = function () {
+                $scope.$parent.students.push(angular.copy($scope.$parent.student))
+                $scope.clear();
+            }
+
+            $scope.cancel = function () {
+                if ($scope.$parent.index == -1) { $scope.clear() }
+                else { $scope.edit($scope.$parent.index) }
+            }
+
+            $scope.delete = function () {
+                $scope.$parent.students.splice($scope.$parent.index, 1)
+                $scope.clear();
+            }
+        });
+
+
+        app.controller("myctrl2", function ($scope) {
+            $scope.edit = function (chiso) {
+                $scope.$parent.index = chiso;
+                $scope.$parent.student = angular.copy($scope.students[chiso]);
+            }
+        });
+
+    </script>
+</body>
+
+</html>
