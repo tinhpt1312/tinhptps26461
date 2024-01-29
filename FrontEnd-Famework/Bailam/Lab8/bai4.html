@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="container" ng-controller="NumberCheckController">
+        <div class="card">
+            <div class="card-header">
+                <h5>Kiểm tra số</h5>
+            </div>
+
+            <div class="card-body">
+                <label for="inputNumber">Nhập số:</label>
+                <input type="number" class="form-control" name="inputNumber" ng-model="enteredNumber" ng-change="checkNumber()" required />
+
+                <div ng-if="showMessage">
+                    <p>{{ message }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+
+        app.controller('NumberCheckController', function ($scope) {
+            $scope.enteredNumber = '';
+            $scope.showMessage = false;
+
+            $scope.checkNumber = function () {
+                var number = parseInt($scope.enteredNumber, 10);
+
+                if (isNaN(number)) {
+                    $scope.message = 'Vui lòng nhập một số hợp lệ.';
+                } else {
+                    if (number % 2 === 0 && number % 9 === 0) {
+                        $scope.message = 'Số ' + number + ' chia hết cho 2 và 9.';
+                    } else {
+                        $scope.message = 'Số ' + number + ' không chia hết cho 2 hoặc 9.';
+                    }
+                }
+
+                $scope.showMessage = true;
+            };
+        });
+    </script>
+
+</body>
+
+</html>

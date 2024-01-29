@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body ng-app="myapp">
+    <div class="container">
+
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a href="#!/" class="nav-link">Trang chủ</a>
+            </li>
+            <li class="nav-item">
+                <a href="#!/thethao" class="nav-link">Thể thao</a>
+            </li>
+            <li class="nav-item">
+                <a href="#!/suckhoe" class="nav-link">Sức khỏe</a>
+            </li>
+            <li class="nav-item">
+                <a href="#!/songdep" class="nav-link">Sống đẹp</a>
+            </li>
+            <li class="nav-item">
+                <a href="#!thohay" class="nav-link">Thơ hay</a>
+            </li>
+        </ul>
+
+        <div class="ng-view"></div>
+    </div>
+    <script>
+        var app = angular.module("myapp", ["ngRoute"]);
+        app.config(function ($routeProvider) {
+            $routeProvider
+                .when("/", {
+                    template: "<h1>Đây là trang chủ</h1>"
+                })
+                .when("/:ten", {
+                    templateUrl: 'hiendstin.html',
+                    controller: 'hientin'
+                })
+                .otherwise({
+                    redirectTo: '/'
+                })
+        });
+        app.controller("hientin", function ($scope, $http, $routeParams) {
+            $scope.listtin = [];
+            $http.get("tin/" + $routeParams.ten + ".js").then(
+                function (r) { $scope.listtin = r.data },
+                function (e) { alert('Lỗi: ' + e.statusText) }
+            )
+            console.log($scope.listtin);
+        });
+
+
+    </script>
+</body>
+
+</html>

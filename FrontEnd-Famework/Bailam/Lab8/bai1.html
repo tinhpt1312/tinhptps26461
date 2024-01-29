@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body ng-app="myapp">
+    <div class="container" ng-controller="bai1">
+        <header class="bg-warning-subtle p-3">
+            <h3 class="text-dark">Quản trị thể loại</h3>
+        </header>
+        <div class="d-flex" style="min-height: 300px;">
+            <div class="col-8 bg-secondary-subtle">
+                <table class="table table-bordered text-center">
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên thể loại</th>
+                        <th>Thứ tự</th>
+                        <th>Tên KD</th>
+                        <th>Số tin</th>
+                        <th>Phụ trách</th>
+                        <th>Ẩn hiện</th>
+                        <th></th>
+                    </tr>
+                    <tr ng-repeat="tl in listtheloai">
+                        <td>{{tl.idTL}}</td>
+                        <td>{{tl.TenTL}}</td>
+                        <td>{{tl.ThuTu}}</td>
+                        <td>{{tl.TenKD == ''?'Chưa có':tl.TenKD}}</td>
+                        <td>{{tl.SoTin}}</td>
+                        <td>{{tl.un == ''?'Chưa có':tl.un}}</td>
+                        <td>
+                            <span ng-if="tl.AnHien==0">Đang ẩn</span>
+                            <span ng-if="tl.AnHien==1">Đang hiện</span>
+                        </td>
+                        <td><button class="btn btn-primary btn-sm" ng-click="chonTL($index)"> > </button></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-4 bg-info-subtle">
+                <form name="formTL" class="ml-4">
+                    <h4>Chỉnh thể loại</h4>
+                    <div class="mb-3">
+                        Tên thể loại
+                        <input name="tentl" ng-model="tlhientai.TenTL" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        Thứ tự <input name="thutu" ng-model="tlhientai.ThuTu" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        Tên TL không dấu <input name="tentlkhongdau" ng-model="" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        Số tin <input name="sotin" ng-model="tlhientai.SoTin" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        Ẩn hiện
+                        <input type="radio" name="optradio" ng-checked="tlhientai.AnHien==0" class="form-check-input">
+                        <label for="">Ẩn</label>
+
+                        <input type="radio" name="optradio" ng-checked="tlhientai.AnHien==1" class="form-check-input">
+                        <label for="">Hiện</label>
+                    </div>
+                    <div class="mb-3">
+                        Người phụ trách
+                        <select ng-model="tlhientai.un" class="form-select">
+                            <option value="{{u.un}}" ng-repeat="u in listusername">{{u.hoten}}</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3 d-flex justify-content-around">
+                        <button class="btn btn-primary">Lưu</button>
+                        <button class="btn btn-secondary">Hủy</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="theloai.js"></script>
+    <script>
+        var app = angular.module("myapp", []);
+        app.controller("bai1", function ($scope) {
+            $scope.index = 0;
+            $scope.listtheloai = theloai;
+
+            $scope.chonTL = function (chiso) {
+                $scope.index = chiso;
+                $scope.tlhientai = angular.copy($scope.listtheloai[chiso]);
+                console.log($scope.tlhientai);
+            }
+
+            $scope.listusername = [
+                { un: "dodatcao", hoten: "Đỗ đạt Cao" },
+                { un: "huahoai", hoten: "Hứa Hoài" },
+                { un: "thihoai", hoten: "Thi Hoài" },
+                { un: "phamkyluat", hoten: "Phạm Kỹ Luật" }
+            ];
+        });
+    </script>
+</body>
+
+</html>

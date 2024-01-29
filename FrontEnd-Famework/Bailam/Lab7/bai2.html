@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body ng-app="myapp">
+    <div class="container">
+        <nav>
+            <a href="#!/">Trang chủ</a>
+            <a href="#!/thethao">Thể Thao</a>
+            <a href="#!/suckhoe">Sức khỏe</a>
+            <a href="#!/songdep">Sống đẹp</a>
+            <a href="#!thongtin">Thông tin</a>
+        </nav>
+        <main ng-view></main>
+    </div>
+    <script>
+        var app = angular.module("myapp", ["ngRoute"]);
+        app.config(function ($routeProvider) {
+            $routeProvider
+                .when("/", {
+                    template: "<h1>Đây là trang chủ</h1>"
+                })
+                .when("/thongtin", {
+                    templateUrl: "thongtin.html",
+
+                })
+                .when("/thethao", {
+                    templateUrl: "thethao.html",
+                    controller: 'thethao'
+                })
+                .when("/suckhoe", {
+                    templateUrl: "suckhoe.html",
+                    controller: 'suckhoe'
+                })
+        });
+        app.controller("thethao", function ($scope, $http, $rootScope) {
+            $scope.listtin = [];
+            $http.get("tin/thethao.js").then(
+                function (r) { $scopelisttin = r.data },
+                function (e) { alert('Lỗi: ' + e.statusText) }
+            )
+        });
+
+        app.controller("suckhoe", function ($scope, $http, $rootScope) {
+            $scope.listtin = [];
+            $http.get("tin/suckhoe.js").then(
+                function (r) { $scopelisttin = r.data },
+                function (e) { alert('Lỗi: ' + e.statusText) }
+            )
+        });
+
+
+    </script>
+</body>
+
+</html>

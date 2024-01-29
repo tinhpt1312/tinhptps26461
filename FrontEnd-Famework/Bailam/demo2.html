@@ -14,13 +14,6 @@
 <body ng-app="myapp">
     <div>
         <div class="row" ng-controller="myctrl">
-            <div ng-repeat="sp in sanpham" class="card col-4">
-
-                <h5>Name: {{sp.name}}</h5>
-                <h5>Giá: {{sp.price}}</h5>
-                <a href="#!{{sp.id}}" class="btn btn-success">Chi tiết</a>
-                
-            </div>
             <div class="ng-view"></div>
         </div>
     </div>
@@ -42,7 +35,7 @@
                     controller: "prodCtrl"
                 })
                 .otherwise({
-                    template: "<p>hi</p>"
+                    templateUrl: "demo4.html"
                 })
 
         });
@@ -57,12 +50,6 @@
             $scope.matchingProduct = matchingProduct;
 
         });
-
-
-
-
-
-
     </script>
 </body>
 

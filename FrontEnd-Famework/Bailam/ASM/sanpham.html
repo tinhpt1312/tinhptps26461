@@ -20,7 +20,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
 </head>
 
-<body ng-app="myapp">
+<body ng-app="myapp" ng-controller="myctrl">
 
     <div class="offcanvas offcanvas-start" id="demo">
         <div class="offcanvas-header mx-3">
@@ -32,60 +32,64 @@
             <div>
                 <p class="mb-3 text-gray-500">Kích cỡ</p>
                 <div class="grid grid-cols-3 gap-x-4 gap-y-2">
-                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-lg w-20" type="button">S</button>
-                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-lg w-20" type="button">M</button>
-                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-lg w-20" type="button">L</button>
-                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-lg w-20" type="button">XL</button>
-                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-lg w-20" type="button">2XL</button>
-                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-lg w-20" type="button">3XL</button>
-                </div>
+                    <div class="form-check mb-2 ">
+                        <input type="checkbox" class="form-check-input mr-5 w-5 h-5" id="check" name="option"
+                            value="something">
+                        <label class="form-check-label text-sm " for="check">Size S</label>
+                    </div>
 
-                <div class="grid grid-cols-3 gap-x-4 gap-y-2 mt-8">
-                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-lg w-20" type="button">29</button>
-                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-lg w-20" type="button">30</button>
-                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-lg w-20" type="button">31</button>
-                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-lg w-20" type="button">32</button>
-                    <button class="btn bg-gray-400 text-white hover:bg-black rounded-lg w-20" type="button">33</button>
+                    <div class="form-check mb-2 ">
+                        <input type="checkbox" class="form-check-input mr-5 w-5 h-5" id="check" name="option"
+                            value="something">
+                        <label class="form-check-label text-sm " for="check">Size M</label>
+                    </div>
+
+                    <div class="form-check mb-2 ">
+                        <input type="checkbox" class="form-check-input mr-5 w-5 h-5" id="check" name="option"
+                            value="something">
+                        <label class="form-check-label text-sm " for="check">Size L</label>
+                    </div>
+
+                    <div class="form-check mb-2 ">
+                        <input type="checkbox" class="form-check-input mr-5 w-5 h-5" id="check" name="option"
+                            value="something">
+                        <label class="form-check-label text-sm " for="check">Size XL</label>
+                    </div>
+
+                    <div class="form-check mb-2 ">
+                        <input type="checkbox" class="form-check-input mr-5 w-5 h-5" id="check" name="option"
+                            value="something">
+                        <label class="form-check-label text-sm " for="check">Size 2XL</label>
+                    </div>
+
+                    <div class="form-check mb-2 ">
+                        <input type="checkbox" class="form-check-input mr-5 w-5 h-5" id="check" name="option"
+                            value="something">
+                        <label class="form-check-label text-sm " for="check">Size 3XL</label>
+                    </div>
+
+
                 </div>
 
             </div>
 
-            <div>
-                <p class="mt-4 mb-3 text-gray-500">Màu sắc</p>
-                <div class="row mb-3">
-                    <input type="color" class="form-control form-control-color mx-3" id="myColor" value="#FFFFFF">
-                    <input type="color" class="form-control form-control-color mx-3" id="myColor" value="#000000">
-                    <input type="color" class="form-control form-control-color mx-3" id="myColor" value="#FF0000">
-                    <input type="color" class="form-control form-control-color mx-3" id="myColor" value="#00FF00">
-                </div>
-                <div class="row mb-3">
-                    <input type="color" class="form-control form-control-color mx-3" id="myColor" value="#0000FF">
-                    <input type="color" class="form-control form-control-color mx-3" id="myColor" value="#FFFF00">
-                    <input type="color" class="form-control form-control-color mx-3" id="myColor" value="#00FFFF">
-                    <input type="color" class="form-control form-control-color mx-3" id="myColor" value="#FF00FF">
-                </div>
-            </div>
+
 
             <div>
                 <p class="mt-4 mb-3 text-gray-500">Danh mục</p>
-                <div class="form-check mb-2 ">
-                    <input type="checkbox" class="form-check-input mr-5 w-5 h-5" id="check" name="option"
-                        value="something">
-                    <label class="form-check-label text-sm " for="check">Bán chạy</label>
-                </div>
                 <div class="form-check mb-2">
                     <input type="checkbox" class="form-check-input mr-5 w-5 h-5" id="check" name="option"
-                        value="something">
+                        value="something" ng-model="showShirts">
                     <label class="form-check-label text-sm " for="check">Áo</label>
                 </div>
                 <div class="form-check mb-2">
                     <input type="checkbox" class="form-check-input mr-5 w-5 h-5" id="check" name="option"
-                        value="something">
+                        value="something" ng-model="showShort">
                     <label class="form-check-label text-sm " for="check">Quần</label>
                 </div>
                 <div class="form-check mb-2">
                     <input type="checkbox" class="form-check-input mr-5 w-5 h-5" id="check" name="option"
-                        value="something">
+                        value="something" ng-model="showShortList">
                     <label class="form-check-label text-sm" for="check">Quần lót</label>
                 </div>
                 <div class="form-check mb-2">
@@ -117,86 +121,29 @@
         </div>
     </div>
 
-    <div class="offcanvas offcanvas-end " id="demo1">
+    <div class="offcanvas offcanvas-end" id="demo1">
         <div class="offcanvas-header mx-3">
             <h1 class="offcanvas-title text-xl">Giỏ hàng</h1>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
         </div>
         <hr class="mx-3">
         <div class="offcanvas-body my-2">
-            <div class="row mb-3 d-flex align-items-center">
-                <img src="img/SapPham/1.jpg" class=" col-2 w-28 flex-grow-0">
-                <h1 class="col-4 text-base flex-shrink-0">Pack 3 Quần Short Nam kẻ sọc Basics</h1>
-                <input type="number" value="1" min="0" max="99" step="1"
+            <div class="row mb-3 d-flex align-items-center" ng-repeat="item in cart">
+                <img src="img/SapPham/{{item.img}}" class=" col-2 w-28 flex-grow-0">
+                <h1 class="col-4 text-base flex-shrink-0">{{item.name}}</h1>
+                <input type="number" value="1" min="0" max="99" ng-model="item.quantity" ng-change="updateTotal(item)"
                     class="border border-dark rounded-xl text-center h-7 col-2 flex-shrink-1">
-                <h1 class="col-2 text-sm flex-shrink-2">199.000đ</h1>
+                <h1 class="col-2 text-sm flex-shrink-2">{{item.total | currency}}</h1>
             </div>
-            <div class="row mb-3 d-flex align-items-center">
-                <img src="img/SapPham/1.jpg" class=" col-2 w-28 flex-grow-0">
-                <h1 class="col-4 text-base flex-shrink-0">Pack 3 Quần Short Nam kẻ sọc Basics</h1>
-                <input type="number" value="1" min="0" max="99" step="1"
-                    class="border border-dark rounded-xl text-center h-7 col-2 flex-shrink-1">
-                <h1 class="col-2 text-sm flex-shrink-2">199.000đ</h1>
-            </div>
-            <div class="row mb-3 d-flex align-items-center">
-                <img src="img/SapPham/1.jpg" class=" col-2 w-28 flex-grow-0">
-                <h1 class="col-4 text-base flex-shrink-0">Pack 3 Quần Short Nam kẻ sọc Basics</h1>
-                <input type="number" value="1" min="0" max="99" step="1"
-                    class="border border-dark rounded-xl text-center h-7 col-2 flex-shrink-1">
-                <h1 class="col-2 text-sm flex-shrink-2">199.000đ</h1>
-            </div>
-            <div class="row mb-3 d-flex align-items-center">
-                <img src="img/SapPham/1.jpg" class=" col-2 w-28 flex-grow-0">
-                <h1 class="col-4 text-base flex-shrink-0">Pack 3 Quần Short Nam kẻ sọc Basics</h1>
-                <input type="number" value="1" min="0" max="99" step="1"
-                    class="border border-dark rounded-xl text-center h-7 col-2 flex-shrink-1">
-                <h1 class="col-2 text-sm flex-shrink-2">199.000đ</h1>
-            </div>
-            <div class="row mb-3 d-flex align-items-center">
-                <img src="img/SapPham/1.jpg" class=" col-2 w-28 flex-grow-0">
-                <h1 class="col-4 text-base flex-shrink-0">Pack 3 Quần Short Nam kẻ sọc Basics</h1>
-                <input type="number" value="1" min="0" max="99" step="1"
-                    class="border border-dark rounded-xl text-center h-7 col-2 flex-shrink-1">
-                <h1 class="col-2 text-sm flex-shrink-2">199.000đ</h1>
-            </div>
-            <div class="row mb-3 d-flex align-items-center">
-                <img src="img/SapPham/1.jpg" class=" col-2 w-28 flex-grow-0">
-                <h1 class="col-4 text-base flex-shrink-0">Pack 3 Quần Short Nam kẻ sọc Basics</h1>
-                <input type="number" value="1" min="0" max="99" step="1"
-                    class="border border-dark rounded-xl text-center h-7 col-2 flex-shrink-1">
-                <h1 class="col-2 text-sm flex-shrink-2">199.000đ</h1>
-            </div>
-            <div class="row mb-3 d-flex align-items-center">
-                <img src="img/SapPham/1.jpg" class=" col-2 w-28 flex-grow-0">
-                <h1 class="col-4 text-base flex-shrink-0">Pack 3 Quần Short Nam kẻ sọc Basics</h1>
-                <input type="number" value="1" min="0" max="99" step="1"
-                    class="border border-dark rounded-xl text-center h-7 col-2 flex-shrink-1">
-                <h1 class="col-2 text-sm flex-shrink-2">199.000đ</h1>
-            </div>
-            <div class="row mb-3 d-flex align-items-center">
-                <img src="img/SapPham/1.jpg" class=" col-2 w-28 flex-grow-0">
-                <h1 class="col-4 text-base flex-shrink-0">Pack 3 Quần Short Nam kẻ sọc Basics</h1>
-                <input type="number" value="1" min="0" max="99" step="1"
-                    class="border border-dark rounded-xl text-center h-7 col-2 flex-shrink-1">
-                <h1 class="col-2 text-sm flex-shrink-2">199.000đ</h1>
-            </div>
-            <div class="row mb-3 d-flex align-items-center">
-                <img src="img/SapPham/1.jpg" class=" col-2 w-28 flex-grow-0">
-                <h1 class="col-4 text-base flex-shrink-0">Pack 3 Quần Short Nam kẻ sọc Basics</h1>
-                <input type="number" value="1" min="0" max="99" step="1"
-                    class="border border-dark rounded-xl text-center h-7 col-2 flex-shrink-1">
-                <h1 class="col-2 text-sm flex-shrink-2">199.000đ</h1>
-            </div>
-
 
         </div>
         <hr>
         <div class="d-flex justify-between mt-2 mx-3">
             <h1 class="font-bold text-lg">Tổng tiền: </h1>
-            <h1 class="font-semibold text-lg">199.000đ</h1>
+            <h1 class="font-semibold text-lg">{{ calculateTotal() | currency }}</h1>
         </div>
         <div class="container-fluid mt-2">
-            <a href="../ASM/Cart.html" class="btn btn-dark w-full">Thanh toán</a>
+            <a class="btn btn-dark w-full" ng-click="proceedToCheckout()">Thanh toán</a>
         </div>
     </div>
 
@@ -204,7 +151,7 @@
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid ">
-                <a class="navbar-brand" href="../ASM/index.html">MenStore</a>
+                <a class="navbar-brand" href="#!Home">MenStore</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -213,26 +160,27 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav m-auto mb-2 mb-lg-0 text-lg ">
                         <li class="nav-item ">
-                            <a class="nav-link" href="../ASM/index.html">Trang chủ</a>
+                            <a class="nav-link" href="#!Home">Trang chủ</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../ASM/sanpham.html">Sản phẩm</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../ASM/nuochoa.html">Nước hoa</a>
+                            <a class="nav-link" href="#!NuocHoa">Nước hoa</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Sản xuất riêng</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../ASM/lienhe.html">Góp ý</a>
+                            <a class="nav-link" href="#!Gopy">Góp ý</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Về chúng tôi</a>
                         </li>
                     </ul>
                     <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Tìm sản phẩm" aria-label="Search">
+                        <input class="form-control me-2" type="search" placeholder="Tìm sản phẩm" aria-label="Search"
+                            ng-model="test">
                         <button class="btn btn-outline-dark" type="submit">Tìm</button>
                         <a href="" data-bs-toggle="modal" data-bs-target="#myModal"><i
                                 class="bi bi-person-square"></i></a>
@@ -261,14 +209,14 @@
                                         <p class="flex-shrink-0">Hoặc</p>
                                         <hr class="flex-grow-1">
                                     </div>
-                                    <form class="space-y-6" action="#" method="POST">
+                                    <form class="space-y-6" action="#" method="POST" name="formDN">
                                         <div>
                                             <label for="email"
                                                 class="block text-sm font-medium leading-6 text-gray-900">Địa chỉ
                                                 Email/SĐT</label>
                                             <div class="mt-2">
                                                 <input id="email" name="email" type="email" autocomplete="email"
-                                                    required
+                                                    required ng-model="username"
                                                     class="block w-full rounded-full border-2 pl-5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-black focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                             </div>
                                         </div>
@@ -281,19 +229,24 @@
 
                                             </div>
                                             <div class="mt-2">
-                                                <input id="password" name="password" type="password"
+                                                <input id="password" name="password" type="password" ng-model="password"
                                                     autocomplete="current-password" required
                                                     class="block w-full rounded-full border-2 pl-5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-black focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                                                <div class="text-sm mt-3 d-flex flex-row-reverse">
-                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#myModal2"
-                                                        class="font-semibold text-indigo-600 hover:text-indigo-500 ">Quên
+                                                <div class="text-sm mt-3 row">
+                                                    <div class="col-6">
+                                                        <input type="checkbox" ng-model="rememberMe"> <label for="">Nhớ mật khẩu</label>
+                                                    </div>
+                                                    <div class="col-6 d-flex justify-end">
+                                                        <a href="#" data-bs-toggle="modal" data-bs-target="#myModal2"
+                                                        class="font-semibold text-indigo-600 hover:text-indigo-500">Quên
                                                         mật khẩu?</a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div>
-                                            <button type="submit"
+                                            <button type="button" ng-click="login()"
                                                 class="flex w-full justify-center rounded-full h-10 bg-black px-3 py-1.5 text-sm font-semibold text-white hover:bg-slate-700">Đăng
                                                 nhập
                                             </button>
@@ -337,42 +290,46 @@
                                         <p class="flex-shrink-0">Hoặc</p>
                                         <hr class="flex-grow-1">
                                     </div>
-                                    <form class="space-y-6" action="#" method="POST">
+                                    <form class="space-y-6" action="#" method="POST" name="formDK">
                                         <div class="row">
                                             <div class="col-6">
-                                                <input type="text" required
+                                                <input type="text" required ng-model="newName"
                                                     class="w-full rounded-full border-2 pl-5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-black focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                                     placeholder="Tên của bạn">
                                             </div>
                                             <div class="col-6">
-                                                <input type="text" required
+                                                <input type="type" required ng-model="newPhone" name="newPhone" ng-pattern="/^0[0-9]*$/" ng-minlength="10" ng-maxlength="10"
                                                     class="w-full rounded-full border-2 pl-5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-black focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                                     placeholder="SĐT của bạn">
+                                                    <i ng-show="formDK.newPhone.$invalid" class="bg-success text-light">SĐT không hợp lệ</i>
                                             </div>
                                         </div>
 
                                         <div>
-                                            <input type="text" required
+
+                                            <input type="email" required ng-model="newEmail" name="newEmail"  ng-pattern="/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/"
                                                 class="w-full rounded-full border-2 pl-5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-black focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                                 placeholder="Email của bạn">
+                                                <i ng-show="formDK.newEmail.$invalid" class="bg-success text-light">Email không hợp lệ</i>
                                         </div>
 
                                         <div>
-                                            <input type="text" id="password" name="password" type="password"
+                                            <input type="password" id="password1" name="newPass1" ng-minlength="8"  type="password" ng-model="newPass1"
                                                 autocomplete="current-password" required
                                                 class="w-full rounded-full border-2 pl-5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-black focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                                 placeholder="Mật khẩu">
+                                                <i ng-show="formDK.newPass1.$invalid" class="bg-success text-light"> Mật khẩu phải có ít nhất 8 kí tự</i>
                                         </div>
 
                                         <div>
-                                            <input type="text" id="password" name="password" type="password"
+                                            <input type="password" id="password2" name="password" type="password" ng-model="newPass2"
                                                 autocomplete="current-password" required
                                                 class="w-full rounded-full border-2 pl-5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-black focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                                 placeholder="Nhập lại mật khẩu">
                                         </div>
 
                                         <div>
-                                            <button type="submit"
+                                            <button type="button" ng-click="register()"
                                                 class="flex w-full justify-center rounded-full h-10 bg-black px-3 py-1.5 text-sm font-semibold text-white hover:bg-slate-700">Đăng
                                                 ký
                                             </button>
@@ -425,31 +382,14 @@
         </nav>
         <article>
             <div class="ng-view"></div>
+            <!-- <div class="row mb-3 d-flex align-items-center" ng-repeat="item in cart">
+                <img src="img/SapPham/{{item.img}}" class=" col-2 w-28 flex-grow-0">
+                <h1 class="col-4 text-base flex-shrink-0">{{item.name}}</h1>
+                <input type="number" value="1" min="0" max="99" step="1"
+                    class="border border-dark rounded-xl text-center h-7 col-2 flex-shrink-1">
+                <h1 class="col-2 text-sm flex-shrink-2">{{item.price | currency}}</h1>
+            </div> -->
 
-            <div class="mb-24 px-2">
-                <div class="grid grid-cols-2 gap-4 mt-8 lg:grid-cols-4">
-                    <div class="d-flex justify-center">
-                        <a href="">
-                            <img src="img/mceclip2.png" class="img-fluid">
-                        </a>
-                    </div>
-                    <div class="d-flex justify-center">
-                        <a href="">
-                            <img src="img/mceclip2_98.png" class="img-fluid">
-                        </a>
-                    </div>
-                    <div class="d-flex justify-center">
-                        <a href="">
-                            <img src="img/mceclip3_29.png" class="img-fluid">
-                        </a>
-                    </div>
-                    <div class="d-flex justify-center">
-                        <a href="">
-                            <img src="img/mceclip1_44.png" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
-            </div>
         </article>
 
 
@@ -620,37 +560,7 @@
 
 
 
-    <script>
-        var app = angular.module("myapp", ["ngRoute"]);
-        app.controller("myctrl", function ($scope, $http) {
-            $scope.sanpham = [];
-            $http.get("clothes.json").then(function (sanphams) {
-                $scope.sanpham = sanphams.data;
-            });
-        })
-
-        app.config(function ($routeProvider) {
-            $routeProvider
-                .when("/:idsp", {
-                    templateUrl: "productdetail.html",
-                    controller: "myctr1"
-                })
-                .otherwise({
-                    templateUrl: "product.html"
-                })
-
-        });
-
-        app.controller("myctr1", function ($scope, $routeParams) {
-            $scope.idsp = $routeParams.idsp;
-
-            var matchingProduct = $scope.sanpham.find(function (product) {
-                return product.id === parseInt($scope.idsp);
-            });
-
-            $scope.matchingProduct = matchingProduct;
-        });
-    </script>
+    <script src="scrip.js"></script>
 </body>
 
 
