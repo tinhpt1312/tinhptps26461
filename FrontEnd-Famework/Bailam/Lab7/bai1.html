@@ -27,7 +27,7 @@
                         <th>Ngày</th>
                         <th>Tiền VN</th>
                     </tr>
-                    <tr ng-repeat="p in listsanpham">
+                    <tr ng-if="$index >= 1" ng-repeat="p in listsanpham | limitTo:6">
                         <td>{{p.name | uppercase}}</td>
                         <td>{{p.price | currency}}</td>
                         <td>{{p.discount| percentageFilter }}</td>
