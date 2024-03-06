@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <body ng-app="myapp">
+        <div class="container">
+            <div class="d-flex justify-content-between bg-primary mb-3 text-white">
+                <div class="p-2 ">DebugCard</div>
+                <div class="p-2">Đăng xuất </div>
+            </div>
+            <div class="row">
+                <div class="col-6 ">
+                    <div class="card ">
+                        <h3>Nạp/Rút tiền</h3>
+                        <form name="formTL">
+                            <div class="mb-3 mt-3">
+                                <label>Số thẻ: </label>
+                                <input type="number" class="form-control" ng-model="inputId" name="ID" required>
+                                <p ng-show="formTL.ID.$invalid" class="text-danger">Số thẻ không tồn tại</p>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email">Chủ thẻ: </label>
+                                <input type="email" class="form-control" id="email" name="email" disabled>
+                            </div>
+                            <div class="mb-3">
+                                <label for="pwd">Số tiền:</label>
+                                <input type="number" class="form-control" id="pwd" placeholder="0" name="pswd">
+                                <p class="text-danger">Số dư không đủ</p>
+                            </div>
+                            <button type="button" ng-click="kiemtra()" class="btn btn-primary">Rút tiền</button>
+                            <button type="button" ng-click="kiemtra()" class="btn btn-secondary">Nạp tiền</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-footer">
+                            <h5>Tài khoản</h5>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Số thẻ</th>
+                                        <th>Chủ thẻ</th>
+                                        <th class="text-end">Số dư</th>
+                                    </tr>
+                                </thead>
+                                <tbody ng-controller="myctrl">
+                                    <tr ng-repeat="p in sanpham | orderBy:'-balance' | limitTo:5">
+                                        <td>{{p.id}}</td>
+                                        <td>{{p.name}}</td>
+                                        <td class="text-end">{{p.balance | number:0}} VNĐ</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" class="text-center text-2xl">Tổng</td>
+                                        <td class="text-end">{{totalPrice()|number:0}} VNĐ</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <script>
+            var app = angular.module("myapp", ["ngRoute"]);
+            app.controller("myctrl", function ($scope, $http) {
+                $scope.sanpham = [];
+                $http.get("data.json").then(function (sanphams) {
+                    $scope.sanpham = sanphams.data;
+                });
+
+                $scope.totalPrice = function () {
+                    var total = 0;
+                    angular.forEach($scope.sanpham, function (tonggia) {
+                        total += tonggia.balance;
+                    });
+                    return total;
+                };
+
+                $scope.kiemtra = function () {
+                    var inputId = $scope.inputId;
+                    $scope.idExists = $scope.sanpham.some(function (item) {
+                        return item.id === inputId;
+                    });
+                }
+            })
+        </script>
+    </body>
+
+</html>

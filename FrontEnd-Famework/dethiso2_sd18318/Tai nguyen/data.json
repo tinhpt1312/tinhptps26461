@@ -1,0 +1,37 @@
+[
+    {
+        "id":"0001",
+        "name":"Phạm Ngọc Cường",
+        "balance":98765000
+    },
+    {
+        "id":"0002",
+        "name":"Nguyễn Tỷ Phú",
+        "balance":260719000
+    },
+    {
+        "id":"0003",
+        "name":"Lê Phát Hiện",
+        "balance":10000000
+    },
+    {
+        "id":"0004",
+        "name":"Trần Bá Hộ",
+        "balance":0
+    },
+    {
+        "id":"0005",
+        "name":"Nguyễn Thị Nam",
+        "balance":5000
+    },
+    {
+        "id":"0006",
+        "name":"Nguyễn Thị Thanh Xuân",
+        "balance":700000
+    },
+    {
+        "id":"0007",
+        "name":"Đoàn Lê Minh Như",
+        "balance":1500000
+    }    
+]
