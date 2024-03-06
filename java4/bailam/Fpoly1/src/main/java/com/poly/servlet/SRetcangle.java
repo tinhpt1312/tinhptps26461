@@ -1,21 +1,23 @@
 package com.poly.servlet;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/helloservlet")
-public class helloservlet extends HttpServlet {
+/**
+ * Servlet implementation class SRetcangle
+ */
+@WebServlet("/SRetcangle")
+public class SRetcangle extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public helloservlet() {
+    public SRetcangle() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -24,22 +26,21 @@ public class helloservlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String sdt = request.getParameter("sdt");
-		request.setAttribute("phone", sdt);
-		String ten = request.getParameter("fullname");
-		request.setAttribute("hoten",ten);
-		request.getRequestDispatcher("view/index.jsp").forward(request, response);
-		
-		
+		request.getRequestDispatcher("/view/SHCN/formS.jsp").forward(request, response);
 	}
-	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		int a, b, dt, cv;
+		a = Integer.parseInt(request.getParameter("chieudai"));
+		b = Integer.parseInt(request.getParameter("chieurong"));
+		dt = a * b;
+		cv = (a+b) * 2;
+		request.setAttribute("dientich", dt);
+		request.setAttribute("chuvi", cv);
+		request.getRequestDispatcher("/view/SHCN/resultS.jsp").forward(request, response);
 	}
 
 }

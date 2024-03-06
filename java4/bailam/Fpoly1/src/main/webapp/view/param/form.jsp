@@ -7,11 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Welcome to Java 4</h1>
-	<h3>Phone: ${phone}</h3>
-	<h3>FullName: ${hoten}</h3>
-	<form action="/Fpoly1/helloservlet">
-		<input name = "sdt">
+	<form action="/Fpoly1/ParamServlet" method = "post">
 		<input name = "fullname">
 		<button>Submit</button>
 	</form>

@@ -7,13 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Welcome to Java 4</h1>
-	<h3>Phone: ${phone}</h3>
-	<h3>FullName: ${hoten}</h3>
-	<form action="/Fpoly1/helloservlet">
-		<input name = "sdt">
-		<input name = "fullname">
-		<button>Submit</button>
-	</form>
+	<h1>FPT Polytechnic</h1>
+	<h4>${message}</h4>
+	<a href="/Fpoly1/HomeServlet">Lien ket</a>
 </body>
 </html>

@@ -1,21 +1,23 @@
 package com.poly.servlet;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/helloservlet")
-public class helloservlet extends HttpServlet {
+/**
+ * Servlet implementation class HomeServlet
+ */
+@WebServlet("/HomeServlet")
+public class HomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public helloservlet() {
+    public HomeServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -24,15 +26,10 @@ public class helloservlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String sdt = request.getParameter("sdt");
-		request.setAttribute("phone", sdt);
-		String ten = request.getParameter("fullname");
-		request.setAttribute("hoten",ten);
-		request.getRequestDispatcher("view/index.jsp").forward(request, response);
-		
-		
+		// TODO Auto-generated method stub
+		request.setAttribute("message", "Hello world Servlet/Jsp");
+		request.getRequestDispatcher("/view/home.jsp").forward(request, response);
 	}
-	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

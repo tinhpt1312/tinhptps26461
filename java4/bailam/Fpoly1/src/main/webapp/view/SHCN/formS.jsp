@@ -7,12 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Welcome to Java 4</h1>
-	<h3>Phone: ${phone}</h3>
-	<h3>FullName: ${hoten}</h3>
-	<form action="/Fpoly1/helloservlet">
-		<input name = "sdt">
-		<input name = "fullname">
+	<h1>Thong tin hinh chu nhat</h1>
+	<form action="/Fpoly1/SRetcangle" method = "post">
+		<label>Chieu rong: </label>
+		<input name = "chieurong">
+		<br>
+		<label>Chieu dai: </label>
+		<input name = "chieudai">
+		<br>
 		<button>Submit</button>
 	</form>
 </body>
