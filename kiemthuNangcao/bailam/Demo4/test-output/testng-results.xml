@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-03-18T16:48:42 ICT" name="Default suite" finished-at="2024-03-18T16:48:42 ICT" duration-ms="59">
+    <groups>
+    </groups>
+    <test started-at="2024-03-18T16:48:42 ICT" name="Default test" finished-at="2024-03-18T16:48:42 ICT" duration-ms="59">
+      <class name="demo.ToanHocTest">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:demo.ToanHocTest@50a638b5]" started-at="2024-03-18T16:48:42 ICT" name="beforeTest" finished-at="2024-03-18T16:48:42 ICT" duration-ms="10" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="CongTest()[pri:0, instance:demo.ToanHocTest@50a638b5]" started-at="2024-03-18T16:48:42 ICT" name="CongTest" finished-at="2024-03-18T16:48:42 ICT" duration-ms="13" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CongTest -->
+        <test-method signature="TruTest()[pri:0, instance:demo.ToanHocTest@50a638b5]" started-at="2024-03-18T16:48:42 ICT" name="TruTest" finished-at="2024-03-18T16:48:42 ICT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TruTest -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:demo.ToanHocTest@50a638b5]" started-at="2024-03-18T16:48:42 ICT" name="afterTest" finished-at="2024-03-18T16:48:42 ICT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- demo.ToanHocTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

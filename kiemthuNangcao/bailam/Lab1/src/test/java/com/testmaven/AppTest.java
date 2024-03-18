@@ -23,7 +23,7 @@ public class AppTest extends TestCase {
 	@Test
 	public void testIsEventNumber4() {
 		App demo1 = new App();
-		boolean result = demo1.isEvenNumber(3);
+		boolean result = demo1.isEvenNumber(4);
 		assertTrue(result);
 	}
 }

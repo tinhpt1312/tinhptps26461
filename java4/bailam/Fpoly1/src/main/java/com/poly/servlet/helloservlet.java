@@ -29,8 +29,6 @@ public class helloservlet extends HttpServlet {
 		String ten = request.getParameter("fullname");
 		request.setAttribute("hoten",ten);
 		request.getRequestDispatcher("view/index.jsp").forward(request, response);
-		
-		
 	}
 	
 

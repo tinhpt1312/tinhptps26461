@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Hello: ${message}</h1>
+	<h1>Số lần: ${count}</h1>
 </body>
 </html>

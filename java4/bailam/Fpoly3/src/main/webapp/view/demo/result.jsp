@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Hello: ${message}</h1>
+	<h2>1. Hình: ${img.name}</h2>
+	<img src="/Fpoly3/uploads/${image.name}" height="100">
+	<h2>2. Tài liệu: ${doc.name}</h2>
+	<a href="/Fpoly3/uploads/${document.name}">Tải về</a>
 </body>
 </html>
