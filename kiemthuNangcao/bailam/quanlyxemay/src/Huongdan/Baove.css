@@ -1,0 +1,68 @@
+* {
+    margin: 0 auto;
+}
+.nen>p{
+    margin-top: 5px;
+    color: red;
+    text-align: center;
+}
+.nen2{
+    width: 700px;
+    height: 400px;
+    
+
+}
+
+.nen2>img {
+    margin-top: 5px;
+    width: 700px;
+    height: 400px;
+}
+
+.foter {
+    width: 70%;
+    height: 200px;
+    text-align: left;
+    
+}
+
+.chu>p {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+.chu>a{
+    font-size: 18px;
+    color: red;
+    top: 450px;
+}
+
+
+.foter>.chu {
+    width: 70%;
+    height: 100px;
+    position: absolute;
+    top: 450px;
+}
+.foter2{
+    width: 70%;
+    height: 200px;
+    text-align: left;
+
+}
+.chu2>p {
+    font-size: 18px;
+    color: black;
+    
+}
+.chu2>a{
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+   
+}
+.foter2>.chu {
+    width: 70%;
+    height: 100px;
+    position: absolute;
+}

@@ -1,0 +1,10 @@
+<suite name="Main Suit" parallel="false">
+	<test name="main-suite-test1">
+		<classes>
+			<class name="TestNG.TestLogin"/>
+			<class name="TestNG.TestInsert"/>
+			<class name="TestNG.TestUpdate"/>
+			<class name="TestNG.TestDelete"/>
+		</classes>
+	</test>
+</suite>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="dist/lib/AbsoluteLayout.jar"/>
+	<classpathentry kind="lib" path="dist/lib/activation.jar"/>
+	<classpathentry kind="lib" path="dist/lib/activation-1.1.1.jar"/>
+	<classpathentry kind="lib" path="dist/lib/additionnal.jar"/>
+	<classpathentry kind="lib" path="dist/lib/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="dist/lib/javax.mail.jar"/>
+	<classpathentry kind="lib" path="dist/lib/jcommon-1.0.23.jar"/>
+	<classpathentry kind="lib" path="dist/lib/jfreechart-1.0.19.jar"/>
+	<classpathentry kind="lib" path="dist/lib/jfreechart-1.0.19-experimental.jar"/>
+	<classpathentry kind="lib" path="dist/lib/jfreechart-1.0.19-swt.jar"/>
+	<classpathentry kind="lib" path="dist/lib/jfreesvg-2.0.jar"/>
+	<classpathentry kind="lib" path="dist/lib/junit-4.11.jar"/>
+	<classpathentry kind="lib" path="dist/lib/jxl.jar"/>
+	<classpathentry kind="lib" path="dist/lib/orsoncharts-1.4-eval-nofx.jar"/>
+	<classpathentry kind="lib" path="dist/lib/orsonpdf-1.6-eval.jar"/>
+	<classpathentry kind="lib" path="dist/lib/servlet.jar"/>
+	<classpathentry kind="lib" path="dist/lib/swtgraphics2d.jar"/>
+	<classpathentry kind="lib" path="dist/quanlyxemay.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>
