@@ -22,7 +22,7 @@
 			<div class="card-header">
 				<b>${item.name}</b>
 			</div>
-			<img class="card-img-top" src="img/${item.image}">
+			<img class="card-img-top" src="view/img/${item.image}">
 			<div class="card-body">
 				Giá gốc: <strike>${item.price}</strike> <br>
 				Giá mới:

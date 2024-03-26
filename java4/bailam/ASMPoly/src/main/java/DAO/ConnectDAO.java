@@ -9,11 +9,15 @@ public class ConnectDAO {
 	
 	public ConnectDAO() {
 		try {
-			String url = "jdbc:sqlserver://localhost:1433;databaseName=ASMJava4;encrypt=true;trustServerCertificate=true";
+			String url = "jdbc:sqlserver://localhost:1433;databaseName=ASMJava4";
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 			conn = DriverManager.getConnection(url, "sa", "songlong");
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
+	
+//	public static void main(String args[]) {
+//		System.out.println("check");
+//	}
 }

@@ -26,7 +26,7 @@
 				</div>
 				
 				<div class="card-body">
-				<img class="card-img-top" src="img/${item.image}">
+				<img class="card-img-top" src="view/img/${item.image}">
 					
 
 

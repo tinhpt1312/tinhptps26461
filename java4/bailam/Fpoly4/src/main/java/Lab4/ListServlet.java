@@ -30,7 +30,7 @@ public class ListServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Item> items = Arrays.asList(new Item[] {
-				new Item("Nokia 2020","nokia.png",500,0.1),
+				new Item("Nokia 2020","nokia.jpg",500,0.1),
 				new Item("Samsung Xyz", "samsung.png", 700, 0.15),
 				new Item("iPhone Xy", "iphone.png", 900, 0.25),
 				new Item("Sony Erricson", "sony.png", 55, 0.3),

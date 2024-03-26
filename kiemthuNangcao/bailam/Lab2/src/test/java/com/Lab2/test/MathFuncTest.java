@@ -34,9 +34,11 @@ public class MathFuncTest {
 	
 	@Test
 	public void factorial() {
-		assertTrue(math.factorial(0) == 1);
-		assertTrue(math.factorial(1) == 1);
-		assertTrue(math.factorial(5) == 120);
+		assertEquals(0, math.factorial(0));
+		
+		assertEquals(0, math.factorial(1));
+		
+		assertEquals(1, math.factorial(1));
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
